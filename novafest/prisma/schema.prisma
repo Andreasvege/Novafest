@@ -12,3 +12,36 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+// Example data model
+model Year {
+  id Int @id @default(autoincrement())
+  days Day[]
+}
+
+model Day {
+  id Int @id @default(autoincrement())
+  date DateTime
+  yearId Int
+  year Year @relation(fields: [yearId], references: [id])
+  concerts Concert[]
+}
+
+model Artist {
+    id          Int       @id @default(autoincrement())
+    name        String
+    description String?
+    link        String?
+    imageUrl    String?
+    concerts    Concert[]
+  }
+
+model Concert {
+  id Int @id @default(autoincrement())
+  time DateTime
+  stage String
+  dayId Int
+  day Day @relation(fields: [dayId], references: [id])
+  artistId Int
+  artist Artist @relation(fields: [artistId], references: [id])
+}
