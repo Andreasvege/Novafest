@@ -12,10 +12,10 @@ export const Navbar = () => {
                         <Link href="/program">Program</Link>
                     </li>
                     <li className="hover:text-red-600 hover:rotate-3">
-                        <Link href="/events">Artister</Link>
+                        <Link href="/artister">Artister</Link>
                     </li>
                     <li className="hover:text-red-600 hover:rotate-3">
-                        <Link href="/contact">Kontakt</Link>
+                        <Link href="/om">Om oss</Link>
                     </li>
                 </ul>
                 <Link href="/billetter" className="font-bold hover:text-red-600 hover:rotate-3">
