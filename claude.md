@@ -65,13 +65,47 @@ novafest/
 └── claude.md          # This file
 ```
 
-## Current State
+## Current State (Updated Feb 2026)
 
-- Basic Next.js setup from create-next-app
-- Minimal homepage with "nova fest" text
-- Program page has placeholder code that doesn't work yet
-- Navbar component exists but isn't used in layout
-- Metadata still has defaults ("Create Next App")
+Pages implemented:
+- `/` - Home (hero, about teaser, lineup teaser)
+- `/program` - Festival schedule (hardcoded 3-day schedule)
+- `/artister` - Artist list (Karpe, Cezinando, Dagny, etc.)
+- `/om` - About Radio Nova and the festival
+- `/billetter` - NOT YET IMPLEMENTED (linked in navbar)
+
+Navbar is integrated with logo.
+
+## Design System
+
+### Colors
+- **Dark (navbar/accents):** `#231f20`
+- **Gray (page background):** `#2d292a`
+- **Yellow (text/accents):** `#f9ed24`
+
+### Fonts
+Using **Redaction** font family (in `/public/fonts/`):
+- **Redaction Regular** - body text
+- **Redaction Bold** - headings (h1-h6)
+- **Redaction 10/20/35/50/70/100** - variants for glitch animation
+
+### Custom CSS (in globals.css)
+- **`.hover-glitch`** - Font glitch effect that cycles through Redaction variants on hover. Used on all clickable text elements.
+
+### Background
+- Grainy gradient image (`/public/background.png`)
+- 70% dark overlay (`bg-[#231f20]/70`) for readability
+
+## Assets
+- `/public/logo.png` - Novafest logo (navbar)
+- `/public/background.png` - Grainy gradient background
+- Design source files: `C:/Users/andyv/Documents/GitHub/Novafest/design_filer/`
+
+## TODO / Future Work
+- [ ] Implement `/billetter` (tickets) page
+- [ ] Connect Prisma database for dynamic artist/schedule content
+- [ ] Photo layering effect (discussed, shelved for now)
+- [ ] More animations/pixelation effects
 
 ## Notes
 
