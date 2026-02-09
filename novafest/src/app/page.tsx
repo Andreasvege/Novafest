@@ -6,10 +6,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="min-h-[80vh] flex flex-col items-center justify-center text-center px-4">
         <h1 className="text-8xl md:text-9xl font-bold mb-6 hover:bg-[#f9ed24] hover:text-[#231f20] transition-colors cursor-default">
-          <span className="hover-glitch">novafest 2026.</span>
+          <span className="hover-glitch">Novafest 2026</span>
         </h1>
         <p className="text-2xl md:text-3xl text-[#f9ed24]/80 mb-2">
-          23. - 25. April 2026
+          23. - 26. April 2026
         </p>
         <p className="text-xl text-[#f9ed24]/60 mb-8">
           Oslo
