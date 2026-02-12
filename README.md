@@ -1,6 +1,7 @@
 # Novafest
 
 Nettside for **Novafest** - den arlige musikkfestivalen arrangert av [Radio Nova](https://radionova.no), studentradioen i Oslo.
+Nettsiden er live på [novafest.no](https://novafest.no)
 
 **Festivaldato:** 23.--25. april 2026
 
