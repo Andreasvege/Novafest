@@ -22,7 +22,7 @@
 **Novafest** is the annual music festival organized by Radio Nova (student radio in Oslo). Similar to festivals like Øya, Piknik i Parken, OverOslo.
 
 ### Timeline
-- Festival date: Early May 2025
+- Festival date: 23-25 April 2026
 - Initial launch: Need something live in a few weeks
 - Approach: Incremental - start with basics, add features over time
 
@@ -57,12 +57,19 @@ novafest/
 │   │   │   ├── page.tsx        # Homepage
 │   │   │   ├── layout.tsx      # Root layout
 │   │   │   ├── globals.css
-│   │   │   └── program/
-│   │   │       └── page.tsx    # Program page (needs work)
+│   │   │   ├── program/
+│   │   │   │   └── page.tsx    # Program page (3-day schedule)
+│   │   │   ├── artister/
+│   │   │   │   ├── page.tsx    # Artist listing page
+│   │   │   │   └── [slug]/
+│   │   │   │       └── page.tsx # Individual artist pages (dynamic route)
+│   │   │   └── om/
+│   │   │       └── page.tsx    # About page
+│   │   ├── lib/                # (to be created) Shared utilities
 │   │   └── components/
-│   │       └── navbar.tsx      # Navigation (not yet integrated)
+│   │       └── navbar.tsx
 │   └── public/
-└── claude.md          # This file
+└── CLAUDE.md          # This file
 ```
 
 ## Current State (Updated Feb 2026)
@@ -70,11 +77,14 @@ novafest/
 Pages implemented:
 - `/` - Home (hero, about teaser, lineup teaser)
 - `/program` - Festival schedule (hardcoded 3-day schedule)
-- `/artister` - Artist list (Karpe, Cezinando, Dagny, etc.)
+- `/artister` - Artist listing page (stylized flex-wrap layout with hover effects)
+- `/artister/[slug]` - Individual artist pages (dynamic route, styled)
 - `/om` - About Radio Nova and the festival
 - `/billetter` - NOT YET IMPLEMENTED (linked in navbar)
 
 Navbar is integrated with logo.
+
+**Note:** Current artist names (Karpe, Cezinando, etc.) are placeholders. Real lineup will feature smaller upcoming artists.
 
 ## Design System
 
@@ -102,11 +112,16 @@ Using **Redaction** font family (in `/public/fonts/`):
 - Design source files: `C:/Users/andyv/Documents/GitHub/Novafest/design_filer/`
 
 ## TODO / Future Work
+- [ ] Create `src/lib/artists.ts` - shared artist data & toSlug helper
+- [ ] Link artists on `/artister` page to their individual pages
+- [ ] Make artists clickable from `/program` page
 - [ ] Implement `/billetter` (tickets) page
 - [ ] Connect Prisma database for dynamic artist/schedule content
+- [ ] Logo animations (CSS - spin/move/scale)
 - [ ] Photo layering effect (discussed, shelved for now)
-- [ ] More animations/pixelation effects
 
 ## Notes
 
-(Add notes here as the project progresses)
+**Dynamic routes:** Using `[slug]` folder naming for individual artist pages. Slug is generated from artist name (e.g., "Unge Ferrari" → "unge-ferrari") using `toSlug()` helper function.
+
+**Animations:** For logo/banner animations, prefer CSS animations over video. If complex motion graphics are needed, use WebM (VP9 with alpha channel) for transparency support.
