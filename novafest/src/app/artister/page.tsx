@@ -1,15 +1,21 @@
-export default function ArtisterPage(){
+export default function ArtisterPage() {
   return (
-    <div className="p-6 flex flex-col justify-center gap-6 text-[#f9ed24] items-center py-12">
-      <h1 className="text-6xl md:text-8xl font-bold mb-8">Artister</h1>
-      <div className="flex flex-wrap justify-center gap-4 max-w-4xl">
-        <span className="hover-glitch text-3xl md:text-4xl font-bold hover:bg-[#f9ed24] hover:text-[#231f20] px-4 py-2 transition-colors cursor-default">Cezinando</span>
-        <span className="hover-glitch text-3xl md:text-4xl font-bold hover:bg-[#f9ed24] hover:text-[#231f20] px-4 py-2 transition-colors cursor-default">Sondre Justad</span>
-        <span className="hover-glitch text-3xl md:text-4xl font-bold hover:bg-[#f9ed24] hover:text-[#231f20] px-4 py-2 transition-colors cursor-default">Unge Ferrari</span>
-        <span className="hover-glitch text-3xl md:text-4xl font-bold hover:bg-[#f9ed24] hover:text-[#231f20] px-4 py-2 transition-colors cursor-default">Arif</span>
-        <span className="hover-glitch text-3xl md:text-4xl font-bold hover:bg-[#f9ed24] hover:text-[#231f20] px-4 py-2 transition-colors cursor-default">Karpe</span>
-        <span className="hover-glitch text-3xl md:text-4xl font-bold hover:bg-[#f9ed24] hover:text-[#231f20] px-4 py-2 transition-colors cursor-default">Dagny</span>
-      </div>
-    </div>
-  )
+    <main className="p-6 text-NovaOrange">
+      {/* Header */}
+      <section className="text-center py-12">
+        <h1 className="text-6xl md:text-8xl font-bold mb-4">Kommer snart</h1>
+        <p className="text-xl text-NovaOrange/70">23. - 25. April 2026</p>
+      </section>
+
+      {/* Schedule */}
+      <section className="max-w-4xl mx-auto py-8">
+        <img src="/logo.png" alt="Novafest 2026 logo" className="w-1/3 mx-auto animate-spin-z"></img>
+      </section>
+
+      {/* Note */}
+      <section className="max-w-4xl mx-auto text-center py-8 text-NovaOrange/50">
+        <p>* Programmet kan bli endret. Flere artister slippes fortløpende.</p>
+      </section>
+    </main>
+  );
 }

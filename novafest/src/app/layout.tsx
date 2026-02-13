@@ -17,14 +17,14 @@ export default function RootLayout({
       <body
         className="antialiased"
         style={{
-          backgroundImage: "url('/background.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundImage: "url('/Oransje.png')",
+          backgroundSize: "190%",
+          backgroundPosition: "0px -40%",
           backgroundAttachment: "fixed",
           backgroundColor: "#2d292a",
         }}
       >
-        <div className="min-h-screen bg-[#231f20]/70">
+        <div className="min-h-screen bg-[#231f20]/20">
           <Navbar />
           {children}
         </div>
