@@ -72,13 +72,13 @@ novafest/
 └── CLAUDE.md          # This file
 ```
 
-## Current State (Updated Feb 2026)
+## Current State (Updated Feb 13, 2026)
 
 Pages implemented:
-- `/` - Home (hero, about teaser, lineup teaser)
-- `/program` - Festival schedule (hardcoded 3-day schedule)
-- `/artister` - Artist listing page (stylized flex-wrap layout with hover effects)
-- `/artister/[slug]` - Individual artist pages (dynamic route, styled)
+- `/` - Home (hero with NovafestLogoIntro.png, Instagram link with text-shadow stroke, about teaser, lineup teaser)
+- `/program` - "Kommer snart" placeholder with spinning logo (animate-spin-z)
+- `/artister` - "Kommer snart" placeholder with spinning logo (animate-spin-z)
+- `/artister/[slug]` - Individual artist pages (dynamic route, styled) — only Karpe & Cezinando have data
 - `/om` - About Radio Nova and the festival
 - `/billetter` - NOT YET IMPLEMENTED (linked in navbar)
 
@@ -88,10 +88,12 @@ Navbar is integrated with logo.
 
 ## Design System
 
-### Colors
-- **Dark (navbar/accents):** `#231f20`
-- **Gray (page background):** `#2d292a`
-- **Yellow (text/accents):** `#f9ed24`
+### Color Variables (defined in globals.css `:root` + `@theme inline`)
+- **`--NovaBlack`:** `#181818` → Tailwind: `text-NovaBlack`, `bg-NovaBlack`
+- **`--NovaOrange`:** `#f9a422` → Tailwind: `text-NovaOrange`, `bg-NovaOrange`, `border-NovaOrange`
+- Hardcoded `#231f20` still used in some places (navbar bg, lineup teaser text, hover states)
+
+**How it works:** `:root` defines the CSS variable value. `@theme inline` with `--color-<name>` prefix makes it available as Tailwind utility classes.
 
 ### Fonts
 Using **Redaction** font family (in `/public/fonts/`):
@@ -101,15 +103,29 @@ Using **Redaction** font family (in `/public/fonts/`):
 
 ### Custom CSS (in globals.css)
 - **`.hover-glitch`** - Font glitch effect that cycles through Redaction variants on hover. Used on all clickable text elements.
+- **`.animate-spin-3d`** - 3D Y-axis rotation (4s loop). Used on logo on placeholder pages.
+- **`text-shadow` stroke** - Outer stroke effect on Instagram link (using 4-direction text-shadow with `var(--NovaOrange)`)
 
 ### Background
-- Grainy gradient image (`/public/background.png`)
-- 70% dark overlay (`bg-[#231f20]/70`) for readability
+- Gradient image (`/public/Oransje.png`) — zoomed 190%, positioned top
+- 20% dark overlay (`bg-[#231f20]/20`)
 
 ## Assets
-- `/public/logo.png` - Novafest logo (navbar)
-- `/public/background.png` - Grainy gradient background
-- Design source files: `C:/Users/andyv/Documents/GitHub/Novafest/design_filer/`
+
+### In `/public/`
+- `logo.png` - Novafest logo (navbar + placeholder pages)
+- `NovafestLogoIntro.png` - Hero logo on homepage
+- `Oransje.png` - Background gradient (currently active)
+- `Grønn.png`, `Rosa 2.png` - Alternative gradient backgrounds
+- `Logo.png`, `Logo Grønn.png`, `LOGO uten bakgrun.png`, `LOGO uten stjerne.png` - Logo variants
+- `Nova fest Logo intro.png`, `Novafest LOGO sticker.png` - Additional logo assets
+- `Rosa.png` - Rosa design asset
+- `hvit.png` - White logo variant
+- `Sjerne Gul.png` - Yellow star
+
+### Design source files
+- Located in `/design_filer/` (at repo root)
+- Contains `Gradient/`, `Logo/`, fonts, and inspiration files
 
 ## TODO / Future Work
 - [ ] Create `src/lib/artists.ts` - shared artist data & toSlug helper
@@ -117,11 +133,14 @@ Using **Redaction** font family (in `/public/fonts/`):
 - [ ] Make artists clickable from `/program` page
 - [ ] Implement `/billetter` (tickets) page
 - [ ] Connect Prisma database for dynamic artist/schedule content
-- [ ] Logo animations (CSS - spin/move/scale)
-- [ ] Photo layering effect (discussed, shelved for now)
+- [ ] Replace remaining hardcoded `#231f20` with a CSS variable/Tailwind class
+- [ ] Responsive navbar (hamburger menu for mobile)
+- [ ] Real artist lineup (replace placeholder data)
 
 ## Notes
 
 **Dynamic routes:** Using `[slug]` folder naming for individual artist pages. Slug is generated from artist name (e.g., "Unge Ferrari" → "unge-ferrari") using `toSlug()` helper function.
 
 **Animations:** For logo/banner animations, prefer CSS animations over video. If complex motion graphics are needed, use WebM (VP9 with alpha channel) for transparency support.
+
+**Vercel Analytics:** `@vercel/analytics/next` is integrated in layout.tsx.
