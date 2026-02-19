@@ -72,17 +72,22 @@ novafest/
 └── CLAUDE.md          # This file
 ```
 
-## Current State (Updated Feb 13, 2026)
+## Current State (Updated Feb 20, 2026)
 
 Pages implemented:
-- `/` - Home (hero with NovafestLogoIntro.png, Instagram link with text-shadow stroke, about teaser, lineup teaser)
+- `/` - Home (hero with NovafestLogoIntro.png, responsive logo sizing, Instagram link with text-shadow stroke, about teaser, lineup teaser)
 - `/program` - "Kommer snart" placeholder with spinning logo (animate-spin-z)
 - `/artister` - "Kommer snart" placeholder with spinning logo (animate-spin-z)
 - `/artister/[slug]` - Individual artist pages (dynamic route, styled) — only Karpe & Cezinando have data
 - `/om` - About Radio Nova and the festival
+- `/frivillig` - Volunteer recruitment page (links to Google Form, styled with bg overlay)
 - `/billetter` - NOT YET IMPLEMENTED (linked in navbar)
 
-Navbar is integrated with logo.
+Navbar is responsive:
+- **Desktop (≥856px):** Logo + links + Billetter button (original layout)
+- **Mobil (<856px):** Hamburger icon | Logo | Billetter button, with fullscreen slide-in menu
+- Custom breakpoint `--breakpoint-navbar: 856px` defined in globals.css
+- Navbar is a client component (`"use client"`) using `useState` for menu toggle
 
 **Note:** Current artist names (Karpe, Cezinando, etc.) are placeholders. Real lineup will feature smaller upcoming artists.
 
@@ -107,7 +112,7 @@ Using **Redaction** font family (in `/public/fonts/`):
 - **`text-shadow` stroke** - Outer stroke effect on Instagram link (using 4-direction text-shadow with `var(--NovaOrange)`)
 
 ### Background
-- Gradient image (`/public/Oransje.png`) — zoomed 190%, positioned top
+- Gradient image (`/public/Oransje.png`) — fixed pixel width, `center top` positioning, `no-repeat`
 - 20% dark overlay (`bg-[#231f20]/20`)
 
 ## Assets
@@ -134,7 +139,10 @@ Using **Redaction** font family (in `/public/fonts/`):
 - [ ] Implement `/billetter` (tickets) page
 - [ ] Connect Prisma database for dynamic artist/schedule content
 - [ ] Replace remaining hardcoded `#231f20` with a CSS variable/Tailwind class
-- [ ] Responsive navbar (hamburger menu for mobile)
+- [x] Responsive navbar (hamburger menu for mobile)
+- [x] Responsive background image (fixed size, no tiling)
+- [x] Responsive hero section (logo + text scaling)
+- [ ] Responsive frivillig page (needs polish)
 - [ ] Real artist lineup (replace placeholder data)
 - [ ] Refactor pages into reusable components (Footer, ArtistCard, etc.)
 
@@ -145,3 +153,5 @@ Using **Redaction** font family (in `/public/fonts/`):
 **Animations:** For logo/banner animations, prefer CSS animations over video. If complex motion graphics are needed, use WebM (VP9 with alpha channel) for transparency support.
 
 **Vercel Analytics:** `@vercel/analytics/next` is integrated in layout.tsx.
+
+**Tailwind CSS 4 note:** Buttons don't get `cursor: pointer` by default. Fixed globally in globals.css with `@layer base` rule.

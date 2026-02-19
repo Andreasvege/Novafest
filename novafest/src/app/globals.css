@@ -86,16 +86,25 @@
   --alt_foreground: #181818;
   --font-heading: 'Redaction', serif;
   --font-body: 'Redaction', serif;
+  
 }
+
+@layer base {
+    button:not(:disabled) {
+      cursor: pointer;
+    }
+  }
 
 @theme inline {
   --color-NovaBlack: var(--NovaBlack);
   --color-NovaOrange: var(--NovaOrange);
-  
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --breakpoint-navbar: 856px;
 }
+
 
 body {
   background-color: var(--NovaBlack);
