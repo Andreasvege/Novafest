@@ -11,18 +11,19 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-16 px-4 max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Oslos studentfestival</h2>
+        <h1 className="text-4xl font-bold mb-6">23. - 25. April</h1>
+        <h2 className="text-3xl font-bold mb-6">Der stjerner blir født</h2>
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
           Novafest er Radio Novas årlige musikkfestival.
-          En dag fylt med live musikk, god stemning og studentvennlige priser.
+          Tre dager fylt med live musikk, god stemning og studentvennlige priser.
         </p>
       </section>
 
       {/* Lineup Teaser */}
       <section className="py-16 px-4 bg-NovaOrange">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-[#231f20]">Lineup for 2026</h2>
-          <p className="text-lg text-[#231f20]/70 mb-8">Artister slippes snart...</p>
+          <h2 className="text-3xl font-bold mb-6 text-[#231f20]">Lineup for 2026 kommer snart</h2>
+          <p className="text-lg text-[#231f20]/70 mb-8">Følg med her og på Instagram for oppdateringer!</p>
           <Link
             href="/program"
             className="hover-glitch text-[#231f20] font-bold hover:underline"
