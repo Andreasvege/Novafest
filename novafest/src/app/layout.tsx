@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
   title: "Novafest",
@@ -20,7 +21,7 @@ export default function RootLayout({
         style={{
           backgroundImage: "url('/Oransje.png')",
           backgroundSize: "190%",
-          backgroundPosition: "0px -40%",
+          backgroundPosition: "0px -60%",
           backgroundAttachment: "fixed",
           backgroundColor: "#2d292a",
         }}
@@ -29,6 +30,8 @@ export default function RootLayout({
           <Navbar />
           {children}
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
