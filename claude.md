@@ -136,6 +136,7 @@ Using **Redaction** font family (in `/public/fonts/`):
 - [ ] Replace remaining hardcoded `#231f20` with a CSS variable/Tailwind class
 - [ ] Responsive navbar (hamburger menu for mobile)
 - [ ] Real artist lineup (replace placeholder data)
+- [ ] Refactor pages into reusable components (Footer, ArtistCard, etc.)
 
 ## Notes
 

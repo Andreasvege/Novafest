@@ -20,10 +20,11 @@ export default function RootLayout({
         className="antialiased"
         style={{
           backgroundImage: "url('/Oransje.png')",
-          backgroundSize: "190%",
-          backgroundPosition: "0px -60%",
+          backgroundSize: "1920px auto",
+          backgroundPosition: "center top",
           backgroundAttachment: "fixed",
           backgroundColor: "#2d292a",
+          backgroundRepeat: "no-repeat",
         }}
       >
         <div className="min-h-screen bg-[#231f20]/20">

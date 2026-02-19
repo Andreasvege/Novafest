@@ -18,9 +18,9 @@ export const Navbar = () => {
                         <Link className="hover-glitch" href="/om">Om oss</Link>
                     </li>
                 </ul>
-                <Link href="/billetter" className="hover-glitch font-bold bg-NovaOrange text-[#231f20] px-4 py-2 rounded-lg hover:bg-NovaOrange/80 transition-all">
+                <a href="https://novafest.ticketco.events/no/nb/e/novafest_2026" className="hover-glitch font-bold bg-NovaOrange text-NovaBlack px-4 py-2 rounded-lg hover:bg-NovaOrange/80 transition-all">
                     Billetter
-                </Link>
+                </a>
             </div>
         </nav>
     );
