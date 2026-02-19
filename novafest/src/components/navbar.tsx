@@ -15,6 +15,9 @@ export const Navbar = () => {
                         <Link className="hover-glitch" href="/artister">Artister</Link>
                     </li>
                     <li className="transition-all">
+                        <Link className="hover-glitch" href="/frivillig">Bli frivillig</Link>
+                    </li>
+                    <li className="transition-all">
                         <Link className="hover-glitch" href="/om">Om oss</Link>
                     </li>
                 </ul>
