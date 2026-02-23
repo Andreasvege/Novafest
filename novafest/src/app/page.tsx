@@ -23,7 +23,7 @@ export default function Home() {
       <section className="py-16 px-4 bg-NovaOrange">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6 text-[#231f20]">Lineup for 2026 kommer snart</h2>
-          <p className="text-lg text-[#231f20]/70 mb-8">Følg med her og på Instagram for oppdateringer!</p>
+          <p className="text-lg text-[#231f20]/90 mb-8">Følg med her og på Instagram for oppdateringer!</p>
           <Link
             href="/program"
             className="hover-glitch text-[#231f20] font-bold hover:underline"

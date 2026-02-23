@@ -13,8 +13,8 @@ export default function ProgramPage() {
       </section>
 
       {/* Note */}
-      <section className="max-w-4xl mx-auto text-center py-8 text-NovaOrange/50">
-        <p>* Programmet kan bli endret. Flere artister slippes fortløpende.</p>
+      <section className="max-w-4xl text-xl text-bold mx-auto text-center py-8 text-NovaOrange">
+        <p className="">Programmet kan bli endret. Flere artister slippes fortløpende.</p>
       </section>
     </main>
   );

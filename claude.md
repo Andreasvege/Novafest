@@ -136,7 +136,6 @@ Using **Redaction** font family (in `/public/fonts/`):
 - [ ] Create `src/lib/artists.ts` - shared artist data & toSlug helper
 - [ ] Link artists on `/artister` page to their individual pages
 - [ ] Make artists clickable from `/program` page
-- [ ] Implement `/billetter` (tickets) page
 - [ ] Connect Prisma database for dynamic artist/schedule content
 - [ ] Replace remaining hardcoded `#231f20` with a CSS variable/Tailwind class
 - [x] Responsive navbar (hamburger menu for mobile)

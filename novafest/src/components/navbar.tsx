@@ -7,7 +7,7 @@ import Link from "next/link";
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <nav className="p-6 m-4 bg-NovaBlack/80 rounded-2xl border-2 border-NovaOrange text-NovaOrange text-xl">
+        <nav className="p-6 m-4 bg-NovaBlack/80 border-2 border-NovaOrange text-NovaOrange text-xl">
             <div className="flex justify-between items-center">
                 {/* Desktop / widescreen navbar */}
                 <ul className="hidden navbar:flex gap-12 text-2xl items-center">
@@ -35,7 +35,7 @@ export const Navbar = () => {
                     </Link>
                 </div>
 
-                <a href="https://novafest.ticketco.events/no/nb/e/novafest_2026" className="hover-glitch font-bold bg-NovaOrange text-NovaBlack px-4 py-2 rounded-lg hover:bg-NovaOrange/80 transition-all">
+                <a href="https://novafest.ticketco.events/no/nb/e/novafest_2026" className="hover-glitch font-bold bg-NovaOrange text-NovaBlack px-4 py-2 w-27 hover:bg-NovaOrange/80 transition-all">
                     Billetter
                 </a>
             </div>
@@ -47,7 +47,7 @@ export const Navbar = () => {
                 <Link href="/artister" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Artister</Link>
                 <Link href="/frivillig" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Bli frivillig</Link>
                 <Link href="/om" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Om oss</Link>
-                <a href="https://novafest.ticketco.events/no/nb/e/novafest_2026" className="font-bold bg-NovaOrange text-NovaBlack px-4 py-2 rounded-lg hover:bg-NovaOrange/80 transition-all" onClick={() => setIsOpen(false)}>
+                <a href="https://novafest.ticketco.events/no/nb/e/novafest_2026" className="font-bold bg-NovaOrange text-NovaBlack px-4 py-2 hover:bg-NovaOrange/80 transition-all" onClick={() => setIsOpen(false)}>
                     Billetter
                 </a>
             </div>

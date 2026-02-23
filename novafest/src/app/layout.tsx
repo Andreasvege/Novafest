@@ -21,13 +21,13 @@ export default function RootLayout({
         style={{
           backgroundImage: "url('/Oransje.png')",
           backgroundSize: "1920px auto",
-          backgroundPosition: "center top",
+          backgroundPosition: "center-top",
           backgroundAttachment: "fixed",
           backgroundColor: "#2d292a",
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="min-h-screen bg-[#231f20]/20">
+        <div className="min-h-screen bg-[#231f20]/30">
           <Navbar />
           {children}
         </div>
