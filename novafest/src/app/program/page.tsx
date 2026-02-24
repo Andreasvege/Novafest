@@ -9,7 +9,7 @@ export default function ProgramPage() {
 
       {/* Schedule */}
       <section className="max-w-4xl mx-auto py-8">
-        <img src="/logo.png" alt="Novafest 2026 logo" className="w-1/3 mx-auto animate-spin-z"></img>
+        <img src="/logo.png" alt="Novafest 2026 logo" className="w-1/3 mx-auto animate-spin-3d"></img>
       </section>
 
       {/* Note */}

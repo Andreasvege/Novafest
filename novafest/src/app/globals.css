@@ -48,17 +48,17 @@
 
 /* Glitch animation keyframes */
 @keyframes font-glitch {
-  0%, 100% { font-family: 'Redaction', serif; }
-  10% { font-family: 'Redaction70', serif; }
-  20% { font-family: 'Redaction35', serif; }
-  30% { font-family: 'Redaction100', serif; }
-  40% { font-family: 'Redaction20', serif; }  
-  50% { font-family: 'Redaction50', serif; }
-  60% { font-family: 'Redaction40', serif; }
-  70% { font-family: 'Redaction80', serif; }
-  80% { font-family: 'Redaction60', serif; }
-  90% { font-family: 'Redaction10', serif; }
-  100% { font-family: 'Redaction40', serif; }
+  0%   { font-family: 'Redaction', serif; }
+  10%  { font-family: 'Redaction70', serif; }
+  20%  { font-family: 'Redaction35', serif; }
+  30%  { font-family: 'Redaction100', serif; }
+  40%  { font-family: 'Redaction20', serif; }
+  50%  { font-family: 'Redaction50', serif; }
+  60%  { font-family: 'Redaction35', serif; }
+  70%  { font-family: 'Redaction100', serif; }
+  80%  { font-family: 'Redaction50', serif; }
+  90%  { font-family: 'Redaction10', serif; }
+  100% { font-family: 'Redaction', serif; }
 }
 
 /* 3D spin animation */

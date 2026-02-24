@@ -1,4 +1,4 @@
-export default function OmPage() {
+export default function FrivilligPage() {
   return (
     <main className="p-6 text-NovaOrange bg-NovaBlack/60 max-w-6xl mx-auto rounded-2xl my-8">
       {/* Header */}
