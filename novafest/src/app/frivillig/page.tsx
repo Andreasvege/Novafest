@@ -9,7 +9,7 @@ export default function FrivilligPage() {
 
       {/* About Radio Nova */}
       <section className="text-center max-w-3xl mx-auto py-6">
-        <a href="https://forms.gle/9Zt7n2mLh1sH8jvG6" className="text-5xl lg:text-6xl bg-NovaOrange text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaOrange), 2px -2px 0 var(--NovaOrange), -2px 2px 0 var(--NovaOrange), 2px 2px 0 var(--NovaOrange)" }}>Søk her</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSd18AVG9B5cz-QueKPoLdhM_OWxJxK43KHR8MmGuwx57OCFNQ/viewform" className="text-5xl lg:text-6xl bg-NovaOrange text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaOrange), 2px -2px 0 var(--NovaOrange), -2px 2px 0 var(--NovaOrange), 2px 2px 0 var(--NovaOrange)" }}>Søk her</a>
       </section>
     
 
