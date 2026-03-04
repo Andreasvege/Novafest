@@ -16,7 +16,7 @@ export default function OmPage() {
           og engasjerende innhold med et mål om å lage god og underholdende radio for studenter.
         </p>
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
-          Vi sender musikk og innhold fra studioet vårt i 4. etasje på Chateu Neuf, med programmer som
+          Vi sender musikk og innhold fra studioet vårt i 4. etasje på Chataeu Neuf, med programmer som
           spenner fra musikk og kultur til nyheter og underholdning.
         </p>
       </section>
@@ -26,7 +26,7 @@ export default function OmPage() {
         <h2 className="text-3xl font-bold mb-6">Festivalen</h2>
         <p className="text-lg text-NovaOrange/80 leading-relaxed mb-4">
           Novafest er vår årlige feiring av musikk og studentkultur.
-          Det som startet som en liten samling har vokst til å bli en av
+          Det som startet som et liten samling har vokst til å bli en av
           Oslos mest etterlengtede studentarrangementer.
         </p>
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
