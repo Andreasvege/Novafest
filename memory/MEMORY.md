@@ -12,6 +12,21 @@
 - Font: Redaction family (Regular, Bold, variants 10/20/35/50/70/100) in /public/fonts/
 - Background: /public/Oransje.png fixed 1920px wide, center top
 
+## Neste steg
+- GlitchLink-komponenten: glitchlink.tsx finnes men er tom/ubrukt — skal ha veldig spesifikk visuell effekt, avklar med Andreas hva han ser for seg
+
+
+- Koble til PostgreSQL-database (DATABASE_URL mangler i .env)
+- Legge inn artister i databasen (Okinawa, Glass Manet, Chateau Neuf bekreftet i karusell)
+- Aktivere /artister/[slug]-sider med ekte data fra DB (artister_alt/ er dormant mal)
+- Klikkområder i ArtistCarousel peker allerede på /artister/okinawa og /artister/glass-manet
+
+## Recent work (mars 2026)
+- Animert logo: stjerne-logo-animert.webm (WebM med alfa) i hero-seksjonen
+- Karusell: ArtistCarousel-komponent med animate-carousel CSS-klasse, to bildekopier for sømløs loop
+- globals.css: lagt til @keyframes carousel + .animate-carousel (NB: pass på at klassen bruker bindestrek, ikke punktum)
+- Karusell-bildet er /Karusell.png — byttes ut når endelig bilde er klart
+
 ## Active Routes
 - / → homepage (hero + Instagram link + about + lineup teaser)
 - /program → "Kommer snart" placeholder with spinning logo
@@ -31,7 +46,10 @@
 ## Components
 - navbar.tsx: client component, responsive (856px breakpoint), hamburger menu
 - glitchlink.tsx: EXISTS but is NEVER USED anywhere
-- No other components yet
+- ArtistCarousel.tsx: src/app/components/ArtistCarousel.tsx — marquee-karusell med klikkbare artistområder, bruker artists[]-array for enkel utvidelse
+
+## Workflow preferences
+- Always flag when something should be a component instead of inline page code
 
 ## Refactoring Plan
 See EVALUERING.md at repo root for full battle plan.

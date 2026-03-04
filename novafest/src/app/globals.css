@@ -80,6 +80,19 @@
   animation: font-glitch 0.4s steps(1);
 }
 
+/* Bildekarusell landing page */
+@keyframes carousel {
+  from {
+    transform: translateX(0); }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-carousel {
+  animation: carousel 30s linear infinite;
+}
+
 :root {
   --NovaBlack: #181818;
   --NovaOrange: #f9a422;

@@ -8,8 +8,11 @@ export default function ArtisterPage() {
       </section>
 
       {/* Schedule */}
-      <section className="max-w-4xl mx-auto py-8">
-        <img src="/logo.png" alt="Novafest 2026 logo" className="w-1/3 mx-auto animate-spin-3d"></img>
+      <section className="max-w-4xl mx-auto py-8 flex flex-col items-center justify-center text-center">
+        <video autoPlay loop muted className="w-[350px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00">
+            <source src="/stjerne-logo-animert.webm" type="video/webm" />
+            Your browser does not support the video tag.
+          </video>
       </section>
 
       {/* Note */}
