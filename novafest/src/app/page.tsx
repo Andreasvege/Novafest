@@ -9,8 +9,8 @@ export default function Home() {
         {/* <img src="/NovafestLogoIntro.png" className="w-[350px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00" alt="Nova fest logo"></img> */}
         {/* <Link href="https://www.instagram.com/novafest.2026/" className="text-5xl lg:text-6xl bg-NovaOrange text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaOrange), 2px -2px 0 var(--NovaOrange), -2px 2px 0 var(--NovaOrange), 2px 2px 0 var(--NovaOrange)" }}>Instagram</Link> */}
           <video autoPlay loop muted className="w-[300px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00">
-            <source src="/stjerne-logo-animert.webm" type="video/webm" />
             <source src="/stjerne-logo-animert.mov" type="video/quicktime" />
+            <source src="/stjerne-logo-animert.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
 
