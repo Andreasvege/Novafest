@@ -22,7 +22,7 @@
                 src="/Karusell.png"
                 alt={copy === 0 ? "Karusell" : ""}
                 aria-hidden={copy === 1}
-                className="w-[1050px] md:w-[1200px] lg:w-[1400px] height-auto"
+                className="w-[750px] md:w-[1200px] lg:w-[1400px] height-auto"
               />
               {artists.map((artist) => (
                 <Link
