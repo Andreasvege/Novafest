@@ -8,7 +8,7 @@ export default function Home() {
       <section className="min-h-[48vh] flex flex-col items-center justify-center text-center">
         {/* <img src="/NovafestLogoIntro.png" className="w-[350px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00" alt="Nova fest logo"></img> */}
         {/* <Link href="https://www.instagram.com/novafest.2026/" className="text-5xl lg:text-6xl bg-NovaOrange text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaOrange), 2px -2px 0 var(--NovaOrange), -2px 2px 0 var(--NovaOrange), 2px 2px 0 var(--NovaOrange)" }}>Instagram</Link> */}
-          <video autoPlay loop muted playsInline className="w-[300px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00">
+          <video autoPlay loop muted playsInline preload="auto" poster="Stjerne-stillframe.png" className="w-[300px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00">
             <source src="/safari-logo.mov" type="video/quicktime" />
             <source src="/stjerne-logo-animert.webm" type="video/webm" />
             Your browser does not support the video tag.
