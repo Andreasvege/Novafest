@@ -22,10 +22,13 @@
 - Klikkområder i ArtistCarousel peker allerede på /artister/okinawa og /artister/glass-manet
 
 ## Recent work (mars 2026)
-- Animert logo: stjerne-logo-animert.webm (WebM med alfa) i hero-seksjonen
-- Karusell: ArtistCarousel-komponent med animate-carousel CSS-klasse, to bildekopier for sømløs loop
-- globals.css: lagt til @keyframes carousel + .animate-carousel (NB: pass på at klassen bruker bindestrek, ikke punktum)
+- Animert logo: to filer — stjerne-logo-animert.webm (Chrome/Firefox) + safari-logo.mov (HEVC med alfa, Safari/iOS)
+- Video-tag krever autoPlay loop muted playsInline for iOS
+- safari-logo.mov laget med FFmpeg: ffmpeg -i original.mov -c:v hevc_videotoolbox -allow_sw 1 -alpha_quality 0.75 -tag:v hvc1 safari-logo.mov
+- Karusell: ArtistCarousel-komponent (src/components/artistcarousel.tsx), animate-carousel i globals.css
+- Karusell ligger utenfor hero-seksjonen i page.tsx for kant-til-kant bredde
 - Karusell-bildet er /Karusell.png — byttes ut når endelig bilde er klart
+- TODO: sjekk filstørrelser på videoene, vurder å redusere alpha_quality til 0.5
 
 ## Active Routes
 - / → homepage (hero + Instagram link + about + lineup teaser)
