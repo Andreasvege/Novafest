@@ -16,7 +16,7 @@ export default function OmPage() {
           og engasjerende innhold med et mål om å lage god og underholdende radio for studenter.
         </p>
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
-          Vi sender musikk og innhold fra studioet vårt i 4. etasje på Chataeu Neuf, med programmer som
+          Vi sender musikk og innhold fra studioet vårt i 4. etasje på Chateau Neuf, med programmer som
           spenner fra musikk og kultur til nyheter og underholdning.
         </p>
       </section>
