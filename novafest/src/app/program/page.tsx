@@ -1,3 +1,5 @@
+import AnimertStjerne from "@/components/animertstjerne";
+
 export default function ProgramPage() {
   return (
     <main className="p-6 text-NovaOrange">
@@ -9,10 +11,7 @@ export default function ProgramPage() {
 
       {/* Schedule */}
       <section className="flex flex-col max-w-4xl mx-auto py-8 items-center justify-center text-center">
-        <video autoPlay loop muted className="w-[350px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00">
-            <source src="/stjerne-logo-animert.webm" type="video/webm" />
-            Your browser does not support the video tag.
-          </video>
+        <AnimertStjerne />
       </section>
 
       {/* Note */}
