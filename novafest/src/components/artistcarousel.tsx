@@ -8,8 +8,9 @@
   };
 
   const artists: Artist[] = [
-    { name: "Okinawa",     href: "/artister/okinawa",     left: "0%",  width: "22%" },
-    { name: "Glass Manet", href: "/artister/glass-manet", left: "43%", width: "29%" },
+    { name: "Okinawa",     href: "/artister/okinawa",     left: "0%",  width: "20%" },
+    { name: "Glass Manet", href: "/artister/glass-manet", left: "40%", width: "20%" },
+    { name: "Marie Løvås", href: "/artister/marie-lovas", left: "80%", width: "20%" },
   ];
 
   export default function ArtistCarousel() {
@@ -22,7 +23,7 @@
                 src="/Karusell.png"
                 alt={copy === 0 ? "Karusell" : ""}
                 aria-hidden={copy === 1}
-                className="w-[750px] md:w-[1000px] lg:w-[1300px] height-auto"
+                className="h-[180px] md:h-[210px] lg:h-[275px] width-auto"
               />
               {artists.map((artist) => (
                 <Link

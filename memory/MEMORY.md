@@ -12,23 +12,39 @@
 - Font: Redaction family (Regular, Bold, variants 10/20/35/50/70/100) in /public/fonts/
 - Background: /public/Oransje.png fixed 1920px wide, center top
 
+## Database (Prisma 7 + PostgreSQL) — satt opp mars 2026
+- Prisma CLI: 6.19.2, @prisma/client: 7.3.0 (må matche!)
+- prisma.config.ts bruker dotenv/config + process.env["POSTGRES_URL"] for migrations
+- Prisma 7: url skal IKKE i schema.prisma — kun i prisma.config.ts
+- Driver adapter kreves i Prisma 7: @prisma/adapter-pg, send adapter til PrismaClient({ adapter })
+- Seed-fil: novafest/prisma/seed.ts — kjøres med: npx tsx prisma/seed.ts
+- Seed bruker POSTGRES_URL (direkte postgres), ikke PRISMA_DATABASE_URL (Accelerate)
+- Okinawa og Glass Manet er lagt inn i Artist-tabellen ✅
+- Artister kan også redigeres direkte i Prisma dashboard på prisma.io
+
 ## Neste steg
-- GlitchLink-komponenten: glitchlink.tsx finnes men er tom/ubrukt — skal ha veldig spesifikk visuell effekt, avklar med Andreas hva han ser for seg
-
-
-- Koble til PostgreSQL-database (DATABASE_URL mangler i .env)
-- Legge inn artister i databasen (Okinawa, Glass Manet, Chateau Neuf bekreftet i karusell)
+- Legg til beskrivelse, lenke og imageUrl på Okinawa og Glass Manet (kan gjøres i Prisma dashboard eller seed.ts)
+- Oppdater seed.ts med fullstendig artistinfo (backup mot database-reset)
 - Aktivere /artister/[slug]-sider med ekte data fra DB (artister_alt/ er dormant mal)
 - Klikkområder i ArtistCarousel peker allerede på /artister/okinawa og /artister/glass-manet
+- GlitchLink-komponenten: glitchlink.tsx finnes men er ubrukt — avklar med Andreas hva den skal gjøre
 
 ## Recent work (mars 2026)
 - Animert logo: to filer — stjerne-logo-animert.webm (Chrome/Firefox) + safari-logo.mov (HEVC med alfa, Safari/iOS)
 - Video-tag krever autoPlay loop muted playsInline for iOS
 - safari-logo.mov laget med FFmpeg: ffmpeg -i original.mov -c:v hevc_videotoolbox -allow_sw 1 -alpha_quality 0.75 -tag:v hvc1 safari-logo.mov
-- Karusell: ArtistCarousel-komponent (src/components/artistcarousel.tsx), animate-carousel i globals.css
+- Karusell: ArtistCarousel-komponent (src/components/artistcarousel.tsx)
 - Karusell ligger utenfor hero-seksjonen i page.tsx for kant-til-kant bredde
 - Karusell-bildet er /Karusell.png — byttes ut når endelig bilde er klart
 - TODO: sjekk filstørrelser på videoene, vurder å redusere alpha_quality til 0.5
+
+## Karusell-bug (uløst, mars 2026)
+- Byttet fra w-[1632px] til h-[] + w-auto for å slippe å endre bredde per bilde
+- Problem: det andre bildet (copy 1) loader ikke/rendres ikke av nettleseren fordi det starter langt utenfor viewport
+- Resulterer i en synlig pause/gap i animasjonen når copy 1 skal dukke opp
+- Forsøkt: loading="eager", will-change-transform, CSS var i keyframe, ready-state, getBoundingClientRect, window.Image() preloader, WAAPI — ingenting funket
+- Nåværende kode bruker WAAPI (element.animate()) med window.Image() preloader — fortsatt gap
+- Mulige neste steg: CSS background-image repeat-x (unngår to kopier helt), eller komprimere bildet kraftig (er 8MB større enn forrige), eller tilbake til w-[] med fast bredde
 
 ## Active Routes
 - / → homepage (hero + Instagram link + about + lineup teaser)
