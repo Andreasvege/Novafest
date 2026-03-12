@@ -1,5 +1,6 @@
 import AnimertStjerne from "@/components/animertstjerne";
 import ArtistCarousel from "@/components/artistcarousel";
+import SlidingBanner from "@/components/slidingbanner";
 import Link from "next/link";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       {/* Artist Carousel */}
       <ArtistCarousel />
       
+
       {/* About Section */}
       <section className="py-16 px-4 max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-6">23. - 25. April</h1>

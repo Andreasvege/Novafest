@@ -82,12 +82,18 @@
 
 /* Bildekarusell landing page */
 @keyframes carousel {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
 }
 
 .animate-carousel {
-  animation: carousel 28s linear infinite;
+  will-change: transform;
+  animation: carousel 20s linear infinite;
+  transition: transform 0.1s;
 }
 
 :root {

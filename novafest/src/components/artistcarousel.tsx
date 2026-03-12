@@ -16,14 +16,15 @@
   export default function ArtistCarousel() {
     return (
       <section className="w-full overflow-hidden">
-        <div className="flex animate-carousel">
-          {[0, 1].map((copy) => (
-            <div key={copy} className="relative flex-shrink-0">
+        <div className="w-max flex animate-carousel">
+          {[0, 1, 2, 3].map((copy) => (
+            <div key={copy} className="relative shrink-0">
               <img
                 src="/Karusell.png"
                 alt={copy === 0 ? "Karusell" : ""}
                 aria-hidden={copy === 1}
-                className="h-[180px] md:h-[210px] lg:h-[275px] width-auto"
+                className="h-[180px] md:h-[210px] lg:h-[275px]"
+                fetchPriority="high"
               />
               {artists.map((artist) => (
                 <Link
