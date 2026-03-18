@@ -1,6 +1,5 @@
 import AnimertStjerne from "@/components/animertstjerne";
 import ArtistCarousel from "@/components/artistcarousel";
-import SlidingBanner from "@/components/slidingbanner";
 import Link from "next/link";
 
 export default function Home() {
