@@ -4,7 +4,8 @@
       "Bash(cd:*)",
       "WebFetch(domain:pris.ly)",
       "WebFetch(domain:www.prisma.io)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(npx prisma:*)"
     ]
   }
 }

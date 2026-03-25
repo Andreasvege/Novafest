@@ -99,6 +99,8 @@
 :root {
   --NovaBlack: #181818;
   --NovaOrange: #f9a422;
+  --NovaGreen: #58B847;
+  --NovaPink: #EC1D8E;
   --alt_foreground: #181818;
   --font-heading: 'Redaction', serif;
   --font-body: 'Redaction', serif;
@@ -114,6 +116,8 @@
 @theme inline {
   --color-NovaBlack: var(--NovaBlack);
   --color-NovaOrange: var(--NovaOrange);
+  --color-NovaGreen: var(--NovaGreen);
+  --color-NovaPink: var(--NovaPink);
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
