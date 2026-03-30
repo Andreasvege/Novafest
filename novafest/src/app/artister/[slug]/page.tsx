@@ -19,17 +19,23 @@
     if (!artist) notFound();                                                                                                 
   
     return (                                                                                                                 
-      <main className="p-6 text-NovaGreen">                
+      <main className="p-6 m-4 text-NovaGreen bg-NovaBlack/60">              
         <section className="text-center py-12">
           <h1 className="text-6xl md:text-8xl hover-glitch font-bold">{artist.name}</h1>                                     
         </section>                                                                                                           
-                                                                                                                             
+
+        <section className="flex justify-center mb-4">
+          {artist.imageUrl && (
+            <img src={"/" + artist.imageUrl} alt={artist.name} className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto rounded" />
+          )}
+        </section>
         <section className="max-w-3xl mx-auto py-12">                                                                        
           {artist.description && (                          
             <p className="text-lg text-NovaGreen/80 leading-relaxed mb-4">                                                  
               {artist.description}                                                                                           
             </p>
-          )}                                                                                                                 
+          )}
+                                                                                            
           {artist.link && (                                                                                                  
             <a
               href={artist.link}                                                                                             
@@ -37,7 +43,7 @@
               className="mt-4 inline-block bg-NovaGreen text-[#231f20] px-4 py-2 rounded hover:bg-NovaGreen/80 
   transition-colors"                                                                                                         
             >
-              Se på Spotify                                                                                                  
+              Sjekk ut                                                                                                  
             </a>                                            
           )}
         </section>

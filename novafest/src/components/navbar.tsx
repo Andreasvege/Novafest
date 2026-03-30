@@ -50,7 +50,7 @@ export const Navbar = () => {
                 <div className="flex navbar:hidden items-center gap-4">
                     <button onClick={() => setIsOpen(true)} className={`${accent.text} text-4xl`}>☰</button>
                     <Link href="/">
-                        <img src="/logo.png" alt="Novafest logo" className="h-16 hover:animate-spin" />
+                        <img src={accent.logo} alt="Novafest logo" className="h-16 hover:animate-spin" />
                     </Link>
                 </div>
 
