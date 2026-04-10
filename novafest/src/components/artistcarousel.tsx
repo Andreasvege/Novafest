@@ -9,8 +9,8 @@
 
   const artists: Artist[] = [
     { name: "Okinawa",     href: "/artister/okinawa",     left: "0%",  width: "20%" },
-    { name: "Glass Manet", href: "/artister/glass-manet", left: "40%", width: "20%" },
-    { name: "Marie Løvås", href: "/artister/marie-lovas", left: "80%", width: "20%" },
+    { name: "Glass Manet", href: "/artister/glassmanet", left: "40%", width: "20%" },
+    { name: "Marie Løvås", href: "/artister/marielovas", left: "80%", width: "20%" },
   ];
 
   export default function ArtistCarousel() {
