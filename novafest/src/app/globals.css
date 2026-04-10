@@ -78,6 +78,7 @@
 
 .hover-glitch:hover {
   animation: font-glitch 0.4s steps(1);
+  font-family: "Redaction50", serif;
 }
 
 /* Bildekarusell landing page */

@@ -20,13 +20,13 @@
   
     return (                                                                                                                 
       <main className="p-6 m-4 text-NovaGreen bg-NovaBlack/60">              
-        <section className="text-center py-12">
+        {/* <section className="text-center py-12">
           <h1 className="text-6xl md:text-8xl hover-glitch font-bold">{artist.name}</h1>                                     
-        </section>                                                                                                           
+        </section> */}
 
         <section className="flex justify-center mb-4">
           {artist.imageUrl && (
-            <img src={"/" + artist.imageUrl} alt={artist.name} className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto rounded" />
+            <img src={"/artistside_bilder/" + artist.imageUrl} alt={artist.name} className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] h-auto rounded" />
           )}
         </section>
         <section className="max-w-3xl mx-auto py-12">                                                                        
