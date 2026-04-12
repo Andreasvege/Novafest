@@ -45,6 +45,10 @@
   font-family: 'Redaction100';
   src: url('/fonts/Redaction100-Regular.otf') format('opentype');
 }
+@font-face {
+  font-family: 'Redaction50-Italic';
+  src: url('/fonts/Redaction50-Italic.otf') format('opentype');
+}
 
 /* Glitch animation keyframes */
 @keyframes font-glitch {
@@ -53,10 +57,10 @@
   20%  { font-family: 'Redaction35', serif; }
   30%  { font-family: 'Redaction100', serif; }
   40%  { font-family: 'Redaction20', serif; }
-  50%  { font-family: 'Redaction50', serif; }
+  50%  { font-family: 'Redaction50-Italic', serif; }
   60%  { font-family: 'Redaction35', serif; }
   70%  { font-family: 'Redaction100', serif; }
-  80%  { font-family: 'Redaction50', serif; }
+  80%  { font-family: 'Redaction50-Italic', serif; }
   90%  { font-family: 'Redaction10', serif; }
   100% { font-family: 'Redaction', serif; }
 }
@@ -78,7 +82,21 @@
 
 .hover-glitch:hover {
   animation: font-glitch 0.4s steps(1);
-  font-family: "Redaction50", serif;
+  font-family: "Redaction50-Italic", italic;
+}
+
+/* NovaHeader */
+.nova-header {
+  color: var(--c);
+  background-color: var(--bg);
+  text-shadow: -2px -2px 0 var(--bg), 2px -2px 0 var(--bg), -2px 2px 0 var(--bg), 2px 2px 0 var(--bg);
+  transition: all 0.05s;
+}
+
+.nova-header:hover {
+  color: var(--bg);
+  background-color: var(--c);
+  text-shadow: -2px -2px 0 var(--c), 2px -2px 0 var(--c), -2px 2px 0 var(--c), 2px 2px 0 var(--c);
 }
 
 /* Bildekarusell landing page */

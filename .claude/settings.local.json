@@ -9,7 +9,8 @@
       "Bash(mv glassmanet.png glassmanet_.png)",
       "Bash(mv grunderlokka.png grunderlokka_.png)",
       "Bash(mv gustav1000.png gustav1000_.png)",
-      "Bash(mv marielovas.png marielovas_.png)"
+      "Bash(mv marielovas.png marielovas_.png)",
+      "Bash(cat:*)"
     ]
   }
 }

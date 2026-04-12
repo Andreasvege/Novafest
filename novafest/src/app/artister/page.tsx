@@ -1,4 +1,5 @@
  import { db } from "@/app/lib/db";                                                                                         
+import NovaHeader from "@/components/novaheader";
   import Link from "next/link";                                                                                              
    
   function toSlug(name: string): string {                                                                                    
@@ -26,16 +27,17 @@
             <Link                                                                                                            
               key={artist.id}                               
               href={`/artister/${toSlug(artist.name)}`}
-              className="hover-glitch text-4xl text-NovaBlack bg-NovaGreen md:text-3xl font-bold hover:bg-NovaBlack hover:text-NovaGreen px-4 py-2      
+              className="hover-glitch text-6xl text-NovaBlack bg-NovaGreen bg-size-[50px] md:text-4xl font-bold hover:bg-NovaBlack hover:text-NovaGreen px-4 py-2      
   transition-colors"                                                                                                         
             >                                                                                                                
               {artist.name}                                                                                                  
             </Link>                                         
           ))}
+          {/* <NovaHeader color="var(--NovaBlack)" bgColor="var(--NovaGreen)">Uironisk Distanse</NovaHeader> */}
         </section>
 
         <section className="max-w-4xl text-xl mx-auto text-center py-8 text-NovaGreen">                                     
-          <p>Programmet kan bli endret. Flere artister slippes fortløpende.</p>
+          <p>Flere artister kommer!</p>
         </section>                                                                                                           
       </main>                                               
     );                                                                                                                       
