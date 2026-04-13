@@ -1,174 +1,99 @@
 # Novafest - Project Context for Claude
 
-## About the Developer
+## Om Andreas
+- Oslo, nyutdannet fra datateknologi (~1 år siden)
+- Erfaring: Java, Python, JS/TS, CSS, HTML, C#, Tailwind
+- Jobber med prosjektet for å bygge skills + portfolio
+- **Arbeidsform:** Andreas lar Claude skrive kode direkte — han leser, forstår og justerer selv. Kort og konsis kommunikasjon, ikke lange forklaringer med mindre han spør.
 
-- **Name:** Andreas
-- **Location:** Oslo, Norway
-- **Background:** Recent computer engineering graduate (finished ~6 months ago)
-- **Experience:** Java, Python, JavaScript, CSS, HTML, C#, TypeScript, Tailwind
-- **Current focus:** Job hunting for full-stack developer roles
-- **Goal:** Build skills and portfolio through this project
+## Prosjektet
+Novafest er Radio Novas (studentradio Oslo) årlige musikkfestival — 23–25. april 2026.
 
-## How I Like to Work
+**Stack:** Next.js (App Router), TypeScript, Tailwind CSS 4, React 19, Prisma 7 + PostgreSQL, Vercel
 
-- **Explain things thoroughly** - I want to learn, not just get code
-- **I write the code myself** - This is important to me
-- **Small pieces** - Give me code in small chunks, not whole files
-- **Clear guidance** - Tell me exactly where to write code and what each part does
-- **Mentor approach** - Teach me concepts as we build
-
-## Project Overview
-
-**Novafest** is the annual music festival organized by Radio Nova (student radio in Oslo). Similar to festivals like Øya, Piknik i Parken, OverOslo.
-
-### Timeline
-- Festival date: 23-25 April 2026
-- Initial launch: Need something live in a few weeks
-- Approach: Incremental - start with basics, add features over time
-
-### Features Needed
-- [ ] Landing page (hero, basic info)
-- [ ] Artist lineup / schedule (who plays when)
-- [ ] Ticket link (external purchase page)
-- [ ] About page (what the festival is)
-- [ ] More features TBD
-
-### Design
-- Working with a designer who will provide logos and visual assets
-- Visual identity coming soon
-
-## Tech Stack
-
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS 4
-- **React:** 19
-- **Hosting:** Vercel
-- **Domain:** novafest.no (access available, not yet configured)
-- **Backend (planned):** PostgreSQL + Prisma (for learning purposes)
-
-## Project Structure
-
+**Repo-struktur:**
 ```
-novafest/
-├── novafest/          # Next.js app
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── page.tsx        # Homepage
-│   │   │   ├── layout.tsx      # Root layout
-│   │   │   ├── globals.css
-│   │   │   ├── program/
-│   │   │   │   └── page.tsx    # Program page (3-day schedule)
-│   │   │   ├── artister/
-│   │   │   │   ├── page.tsx    # Artist listing page
-│   │   │   │   └── [slug]/
-│   │   │   │       └── page.tsx # Individual artist pages (dynamic route)
-│   │   │   └── om/
-│   │   │       └── page.tsx    # About page
-│   │   ├── lib/                # (to be created) Shared utilities
-│   │   └── components/
-│   │       └── navbar.tsx
+Novafest/               ← git root
+├── novafest/           ← Next.js-appen
+│   ├── src/app/
+│   ├── src/components/
 │   └── public/
-└── CLAUDE.md          # This file
+└── memory/             ← denne mappen
 ```
-
-## Current State (Updated April 1, 2026)
-
-Pages implemented:
-- `/` - Home (hero with NovafestLogoIntro.png, responsive logo sizing, Instagram link with text-shadow stroke, about teaser, lineup teaser)
-- `/program` - "Kommer snart" placeholder with spinning logo (animate-spin-z)
-- `/artister` - Artist listing fetched from DB, NovaGreen color scheme, clickable links to individual pages
-- `/artister/[slug]` - Individual artist pages from DB (name, description, image, Spotify link). Image: `w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px]`
-- `/om` - About Radio Nova and the festival
-- `/frivillig` - Volunteer recruitment page (links to Google Form, styled with bg overlay)
-- `/billetter` - NOT YET IMPLEMENTED (linked in navbar)
-
-Navbar is responsive:
-- **Desktop (≥856px):** Logo + links + Billetter button (original layout)
-- **Mobil (<856px):** Hamburger icon | Logo | Billetter button, with fullscreen slide-in menu
-- Custom breakpoint `--breakpoint-navbar: 856px` defined in globals.css
-- Navbar is a client component (`"use client"`) using `useState` for menu toggle
-
-**Note:** Current artist names (Karpe, Cezinando, etc.) are placeholders. Real lineup will feature smaller upcoming artists.
 
 ## Design System
+**Farger (CSS vars i globals.css + @theme inline):**
+- `--NovaBlack: #181818`
+- `--NovaOrange: #f9a422`
+- `--NovaGreen: #58B847`
+- `--NovaPink: #EC1D8E`
 
-### Color Variables (defined in globals.css `:root` + `@theme inline`)
-- **`--NovaBlack`:** `#181818` → Tailwind: `text-NovaBlack`, `bg-NovaBlack`
-- **`--NovaOrange`:** `#f9a422` → Tailwind: `text-NovaOrange`, `bg-NovaOrange`, `border-NovaOrange`
-- **`--NovaGreen`:** (added) → used on `/artister` and `/artister/[slug]` pages
-- Hardcoded `#231f20` still used in some places (navbar bg, lineup teaser text, hover states)
+**Font:** Redaction-familien (Regular, Bold, 10/20/35/50/70/100) i `/public/fonts/`
 
-**How it works:** `:root` defines the CSS variable value. `@theme inline` with `--color-<name>` prefix makes it available as Tailwind utility classes.
+**Custom CSS-klasser:**
+- `.hover-glitch` — font-glitch effekt ved hover (sykler gjennom Redaction-varianter)
+- `.animate-spin-3d` — 3D Y-rotasjon, 4s loop
+- `.nova-header` — bakgrunns+farge-swap ved hover via CSS-variabler `--c` og `--bg`
 
-### Fonts
-Using **Redaction** font family (in `/public/fonts/`):
-- **Redaction Regular** - body text
-- **Redaction Bold** - headings (h1-h6)
-- **Redaction 10/20/35/50/70/100** - variants for glitch animation
+## Sider og fargetema
+Navbar og BackgroundWrapper bruker `usePathname()` til å sette farge + bakgrunn per side:
 
-### Custom CSS (in globals.css)
-- **`.hover-glitch`** - Font glitch effect that cycles through Redaction variants on hover. Used on all clickable text elements.
-- **`.animate-spin-3d`** - 3D Y-axis rotation (4s loop). Used on logo on placeholder pages.
-- **`text-shadow` stroke** - Outer stroke effect on Instagram link (using 4-direction text-shadow with `var(--NovaOrange)`)
+| Side | Farge | Bakgrunn |
+|------|-------|----------|
+| `/artister`, `/artister/vorssamlingen`, `/artister/marie-loevaas` | NovaGreen | Grønn.png |
+| `/frivillig`, `/artister/gustav1000`, `/artister/glassmanet` | NovaPink | Rosa.png |
+| Alle andre | NovaOrange | Oransje.png |
 
-### Background
-- Gradient image (`/public/Oransje.png`) — fixed pixel width, `center top` positioning, `no-repeat`
-- 20% dark overlay (`bg-[#231f20]/20`)
+Artist `[slug]`-sider bruker slug direkte (ikke pathname) for fargelogikk siden det er server component.
 
-## Assets
+## Implementerte sider
+- `/` — Hero (AnimertStjerne), ArtistCarousel, om-seksjon, Instagram-knapp
+- `/artister` — Artistliste fra DB, grønn farge
+- `/artister/[slug]` — Individuell artistside med bilde, beskrivelse, Instagram-knapp, tilbakeknapp
+- `/program` — "Kommer snart" placeholder
+- `/om` — Om Radio Nova og festivalen
+- `/frivillig` — Frivillig-rekruttering, rosa tema, Google Form-lenke
+- `not-found.tsx` — 404-side med hover-glitch
 
-### In `/public/`
-- `logo.png` - Novafest logo (navbar + placeholder pages)
-- `NovafestLogoIntro.png` - Hero logo on homepage
-- `Oransje.png` - Background gradient (currently active)
-- `Grønn.png`, `Rosa 2.png` - Alternative gradient backgrounds
-- `Logo.png`, `Logo Grønn.png`, `LOGO uten bakgrun.png`, `LOGO uten stjerne.png` - Logo variants
-- `Nova fest Logo intro.png`, `Novafest LOGO sticker.png` - Additional logo assets
-- `Rosa.png` - Rosa design asset
-- `hvit.png` - White logo variant
-- `Sjerne Gul.png` - Yellow star
+## Komponenter
+- `navbar.tsx` — responsiv (856px breakpoint), hamburger-meny, farge/logo per side
+- `backgroundwrapper.tsx` — bytter bakgrunnsbilde per side
+- `artistcarousel.tsx` — hardkodet med 3 artister (Okinawa, Glass Manet, Marie Løvås)
+- `novaheader.tsx` — tekst med bakgrunn + hover color-swap. Props: `color`, `bgColor` (CSS-verdier). Brukes ikke i produksjon ennå.
+- `animertstjerne.tsx` — animert stjerne-video (WebM + MOV for Safari)
+- `glitchlink.tsx` — finnes men brukes ikke
 
-### Design source files
-- Located in `/design_filer/` (at repo root)
-- Contains `Gradient/`, `Logo/`, fonts, and inspiration files
-
-## TODO / Future Work
-- [ ] Program page — enkel liste per dag (artister gruppert på 23/24/25 april), Concert-tabellen har data
-- [ ] Make artists clickable from `/program` page
-- [ ] Replace remaining hardcoded `#231f20` with a CSS variable/Tailwind class
-- [x] Responsive navbar (hamburger menu for mobile)
-- [x] Responsive background image (fixed size, no tiling)
-- [x] Responsive hero section (logo + text scaling)
-- [ ] Responsive frivillig page (needs polish)
-- [x] Real artist lineup from DB
-- [x] /artister page with DB data
-- [x] /artister/[slug] individual pages with DB data
-- [ ] Refactor pages into reusable components (Footer, ArtistCard, etc.)
-
-## Database / Prisma
-
-- **Prisma 7** med custom output: `src/generated/prisma`
-- Klienten genereres med `./node_modules/.bin/prisma generate` (ikke global npx!)
+## Database (Prisma 7 + PostgreSQL)
+- Prisma client output: `src/generated/prisma`
 - `db.ts` bruker `PrismaPg`-adapter med `POSTGRES_URL` fra `.env.local`
-- `prisma.config.ts` håndterer URL og migrations — `schema.prisma` skal IKKE ha `url` i datasource (Prisma 7)
-- `seed.ts` kjøres manuelt for å populere DB
-- Artister: `Okinawa`, `Glass Manet`, `Marie Løvås` (og evt. flere)
-- `toSlug()` brukes i begge artister-sidene — håndterer æøå: æ→ae, ø→oe, å→aa
+- `prisma.config.ts` håndterer URL — `schema.prisma` skal IKKE ha `url` i datasource (Prisma 7)
 
-## Per-side farger og bakgrunn
+**Artister i DB:** Okinawa, Glassmanet, Gustav1000, Marie Løvås (marielovas), SULT, Vorssamlingen
 
-- **`BackgroundWrapper`** (`src/components/backgroundwrapper.tsx`) — klientkomponent som bruker `usePathname` til å bytte bakgrunnsbilde per side
-- **Navbar** bruker `accent`-objekt basert på `usePathname` — bytter farge og logo per side
-- Artistsider (`/artister*`): NovaGreen + `Grønn.png` bakgrunn
-- Alle andre sider: NovaOrange + `Oransje.png` bakgrunn
+**Bilder:** Lagret i `public/artistside_bilder/` med lowercase filnavn (eks: `glassmanet.png`). DB lagrer kun filnavnet, koden prefixer `/artistside_bilder/`.
 
-## Notes
+**DB-oppdatering via node-script:**
+```js
+// Bruk pg-klienten direkte med .env.local
+import pg from "pg";
+const env = readFileSync(".env.local", "utf8");
+const match = env.match(/POSTGRES_URL=(.+)/);
+const connectionString = match[1].trim().replace(/^["']|["']$/g, "");
+// Kjør: node update-db.mjs
+```
 
-**Dynamic routes:** Using `[slug]` folder naming for individual artist pages. Slug is generated from artist name (e.g., "Unge Ferrari" → "unge-ferrari") using `toSlug()` helper function.
+**Beskrivelser:** Lagret med `\n\n` for avsnittsskift. Koden bruker `whitespace-pre-wrap` + `.replace(/\\n/g, "\n")` for å rendre dem.
 
-**Animations:** For logo/banner animations, prefer CSS animations over video. If complex motion graphics are needed, use WebM (VP9 with alpha channel) for transparency support.
+## Logoer og assets
+- `logo.png` — oransje logo (default)
+- `logo_green.png` — grønn logo (artister-sider)
+- `logo_rosa.png` — rosa logo (frivillig/pink-sider)
+- `instagram_[farge][1/2].png` — Instagram-ikoner, brukes med group hover (1→2 på hover)
+- Bakgrunner: `Oransje.png`, `Grønn.png`, `Rosa.png` (fixed 1920px, center top)
 
-**Vercel Analytics:** `@vercel/analytics/next` is integrated in layout.tsx.
-
-**Tailwind CSS 4 note:** Buttons don't get `cursor: pointer` by default. Fixed globally in globals.css with `@layer base` rule.
+## Kjente TODO-er
+- [ ] Program-siden — faktisk innhold (Concert-tabellen har data)
+- [ ] NovaHeader — hover-effekten er sannsynligvis ødelagt pga inline style-spesifisitet
+- [ ] `toSlug()` er duplisert i to filer — burde ligge i `src/utils/slug.ts`
+- [ ] `#231f20` hardkodet flere steder — burde bli en CSS-variabel
+- [ ] Ingen error.tsx / loading.tsx på rutenivå
