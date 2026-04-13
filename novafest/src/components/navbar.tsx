@@ -9,15 +9,22 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
-    const isArtister = pathname.startsWith("/artister");
-    const accent = isArtister
+    const isGreen = pathname.endsWith("vorssamlingen") || pathname.endsWith("/marie-loevaas") || pathname.endsWith("artister");
+    const isPink = pathname.startsWith("/frivillig") || pathname.endsWith("gustav1000") || pathname.endsWith("glassmanet");
+    const isOrange = !isGreen && !isPink;
+    const accent = isGreen
       ? { text: "text-NovaGreen", 
         border: "border-NovaGreen", 
         bg: "bg-NovaGreen", 
         bgHover: "hover:bg-NovaGreen/80",
-        logo: "/logo_grønn.png" 
+        logo: "/logo_green.png"
+    } : isPink
+    ? {text: "text-NovaPink",
+        border: "border-NovaPink",
+        bg: "bg-NovaPink",
+        bgHover: "hover:bg-NovaPink/80",
+        logo: "/logo_rosa.png"
     }
-
       : { text: "text-NovaOrange", 
         border: "border-NovaOrange", 
         bg: "bg-NovaOrange", 
@@ -48,7 +55,7 @@ export const Navbar = () => {
                 </ul>
                 {/* Mobile navbar */}
                 <div className="flex navbar:hidden items-center gap-4">
-                    <button onClick={() => setIsOpen(true)} className={`${accent.text} text-4xl`}>☰</button>
+                    <button onClick={() => setIsOpen(true)} aria-label="Åpne meny" className={`${accent.text} text-4xl`}>☰</button>
                     <Link href="/">
                         <img src={accent.logo} alt="Novafest logo" className="h-16 hover:animate-spin" />
                     </Link>
@@ -61,7 +68,7 @@ export const Navbar = () => {
 
             {/* Fullscreen menu */}
             <div className={`fixed inset-0 bg-NovaBlack z-50 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                <button onClick={() => setIsOpen(false)} className={`absolute top-8 left-8 ${accent.text} text-4xl`}>✕</button>
+                <button onClick={() => setIsOpen(false)} aria-label="Lukk meny" className={`absolute top-8 left-8 ${accent.text} text-4xl`}>✕</button>
                 <Link href="/program" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Program</Link>
                 <Link href="/artister" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Artister</Link>
                 <Link href="/frivillig" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Bli frivillig</Link>

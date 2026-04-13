@@ -27,8 +27,8 @@ import NovaHeader from "@/components/novaheader";
             <Link                                                                                                            
               key={artist.id}                               
               href={`/artister/${toSlug(artist.name)}`}
-              className="hover-glitch text-6xl text-NovaBlack bg-NovaGreen bg-size-[50px] md:text-4xl font-bold hover:bg-NovaBlack hover:text-NovaGreen px-4 py-2      
-  transition-colors"                                                                                                         
+              className="hover-glitch text-NovaBlack bg-NovaGreen sm:text-4xl md:text-6xl font-bold hover:bg-NovaBlack hover:text-NovaGreen px-4 py-2 transition-colors"
+  style={{padding: "2px 3px"}}                                                                                                         
             >                                                                                                                
               {artist.name}                                                                                                  
             </Link>                                         
@@ -36,8 +36,8 @@ import NovaHeader from "@/components/novaheader";
           {/* <NovaHeader color="var(--NovaBlack)" bgColor="var(--NovaGreen)">Uironisk Distanse</NovaHeader> */}
         </section>
 
-        <section className="max-w-4xl text-xl mx-auto text-center py-8 text-NovaGreen">                                     
-          <p>Flere artister kommer!</p>
+        <section className="max-w-4xl text-xl mx-auto font-bold text-center py-8">                                     
+          <p className="text-NovaGreen bg-NovaBlack inline-block p-1">Flere artister kommer!</p>
         </section>                                                                                                           
       </main>                                               
     );                                                                                                                       

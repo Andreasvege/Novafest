@@ -10,7 +10,10 @@
       "Bash(mv grunderlokka.png grunderlokka_.png)",
       "Bash(mv gustav1000.png gustav1000_.png)",
       "Bash(mv marielovas.png marielovas_.png)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(node -e ':*)",
+      "Bash(node:*)",
+      "Bash(ls:*)"
     ]
   }
 }
