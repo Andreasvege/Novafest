@@ -1,6 +1,6 @@
 export default function OmPage() {
   return (
-    <main className="p-6 text-NovaOrange">
+    <main className="p-6 pb-16 text-NovaOrange bg-NovaBlack/60 max-w-6xl mx-auto my-8">
       {/* Header */}
       <section className="text-center py-12">
         <h1 className="text-6xl md:text-8xl font-bold mb-4">Om oss</h1>

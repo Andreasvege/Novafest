@@ -15,7 +15,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
     <html lang="no">
       <body className="antialiased">
         <BackgroundWrapper>
-          <div className="min-h-screen bg-[#2d292a]/30">
+          <div className="min-h-screen bg-[#2d292a]/35">
             <Navbar />
             {children}
           </div>

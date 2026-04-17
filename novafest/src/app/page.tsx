@@ -21,7 +21,7 @@ export default function Home() {
       <section className="py-16 px-4 max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-6">23. - 25. April</h1>
         <h2 className="text-3xl font-bold mb-6">Der stjerner blir født</h2>
-        <p className="text-lg text-NovaOrange/80 leading-relaxed">
+        <p className="text-lg text-NovaOrange/95 leading-relaxed font-bold">
           Novafest er Radio Novas årlige musikkfestival.
           Tre dager fylt med live musikk, god stemning og studentvennlige priser.
         </p>
