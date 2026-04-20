@@ -19,7 +19,8 @@
       "Bash(ffmpeg -encoders)",
       "Bash(sips -s format webp /Users/andreasvege/Documents/GitHub/Novafest/novafest/public/Oransje.png --out /tmp/test.webp)",
       "Bash(brew install *)",
-      "Bash(cwebp --version)"
+      "Bash(cwebp --version)",
+      "Bash(npx tsc *)"
     ]
   }
 }
