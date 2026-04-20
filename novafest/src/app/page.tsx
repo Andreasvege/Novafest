@@ -30,8 +30,8 @@ export default function Home() {
       {/* Lineup Teaser */}
       <section className="py-16 px-4 bg-NovaOrange">
         <div className="flex flex-col max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6 text-[#231f20]">Flere artister kommer snart</h2>
-          <p className="text-lg text-[#231f20]/90 mb-8">Følg med her og på Instagram for oppdateringer!</p>
+          <h2 className="text-3xl font-bold mb-6 text-[#231f20]">Vi sees på Chateau Neuf!</h2>
+          <p className="text-lg text-[#231f20]/90 mb-8">Følg med her, på Instagram og TikTok for oppdateringer!</p>
           <Link href="https://instagram.com/novafest.2026" target="_blank" rel="noopener noreferrer" className="mx-auto group">
             <img src="/instagram_orange1.webp" alt="Instagram" className="w-16 h-16 block group-hover:hidden" />
             <img src="/instagram_orange2.webp" alt="Instagram" className="w-16 h-16 hidden group-hover:block" />

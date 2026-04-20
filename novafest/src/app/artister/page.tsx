@@ -16,9 +16,9 @@ import NovaHeader from "@/components/novaheader";
     });
                                                                                                                              
     return (                                                
-      <main className="p-6 text-NovaGreen">
-        <section className="text-center py-12">                                                                              
-          <h1 className="text-6xl md:text-8xl font-bold mb-4">Artister</h1>
+      <main className="p-6 text-NovaBlack">
+        <section className="text-center py-4">                                                                              
+          <h1 className="text-6xl md:text-8xl bg-NovaBlack text-NovaGreen font-bold mb-4 inline-block">Artister</h1>
           <p className="text-xl text-NovaGreen/70">23. - 25. April 2026</p>                                                 
         </section>                                                                                                           
                                                                                                                              

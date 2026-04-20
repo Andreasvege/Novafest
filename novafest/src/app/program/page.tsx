@@ -46,9 +46,9 @@ export default async function ProgramPage() {
 
   return (
     <main
-      className="min-h-screen px-4 py-16"
+      className="min-h-screen px-4 py-6"
     >
-      <h1 className="text-center text-6xl md:text-8xl font-bold text-white mb-16">
+      <h1 className="text-center text-6xl md:text-8xl font-bold text-white mb-6">
         <span className="bg-NovaBlack text-NovaOrange px-4 py-1 inline-block">Program</span>
       </h1>
 
