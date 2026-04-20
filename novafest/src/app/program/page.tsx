@@ -33,9 +33,9 @@ function formatWeekday(date: Date): string {
 }
 
 const dayConfig = [
-  { gradient: "/Oransje.webp", badge: "/logo.webp",       color: "#f9a422", doors: "Dørene åpner 18:30", extra: { time: "17:00", name: "Musikkbingo i galleriet" } },
-  { gradient: "/Grønn.webp",   badge: "/logo_green.webp", color: "#58B847", doors: "Dørene åpner 19:30", extra: null },
-  { gradient: "/Rosa.webp",    badge: "/logo_rosa.webp",  color: "#EC1D8E", doors: "Dørene åpner 19:00", extra: { time: "13:00", name: "Klesmarked i foajeen" } },
+  { gradient: "/Oransje.webp", badge: "/logo.webp",       color: "#f9a422", doorsLabel: "Dørene åpner", doorsTime: "18:30", bgPos: "left center",   extra: { time: "17:00", name: "Musikkbingo i galleriet" } },
+  { gradient: "/Grønn.webp",   badge: "/logo_green.webp", color: "#58B847", doorsLabel: "Dørene åpner", doorsTime: "19:30", bgPos: "center center", extra: null },
+  { gradient: "/Rosa.webp",    badge: "/logo_rosa.webp",  color: "#EC1D8E", doorsLabel: "Dørene åpner", doorsTime: "19:00", bgPos: "right center",  extra: { time: "13:00", name: "Klesmarked i foajeen" } },
 ];
 
 export default async function ProgramPage() {
@@ -64,8 +64,8 @@ export default async function ProgramPage() {
               className="relative flex flex-col overflow-hidden"
               style={{
                 backgroundImage: `url('${cfg.gradient}')`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundSize: "225%",
+                backgroundPosition: cfg.bgPos,
                 minHeight: "560px",
                 border: "3px solid #181818",
                 boxShadow: "-6px 6px 0px #181818",
@@ -73,8 +73,8 @@ export default async function ProgramPage() {
             >
               {/* Dato og dører øverst */}
               <div className="flex justify-between items-start px-6 pt-6">
-                <span className="text-lg font-bold bg-NovaBlack px-1" style={{ color: cfg.color, fontFamily: "Redaction50-Italic" }}>
-                  {cfg.doors}
+                <span className="text-lg font-bold bg-NovaBlack px-1" style={{ color: cfg.color }}>
+                  {cfg.doorsLabel} <span style={{ fontFamily: "Redaction50-Italic" }}>{cfg.doorsTime}</span>
                 </span>
                 <span className="text-2xl font-bold bg-NovaBlack px-1" style={{ color: cfg.color, fontFamily: "Redaction50-Italic" }}>
                   {date}

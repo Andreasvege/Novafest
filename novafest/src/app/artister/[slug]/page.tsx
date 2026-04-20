@@ -19,7 +19,7 @@
     if (!artist) notFound();
 
     const isGreen = slug === "vorssamlingen" || slug === "marie-loevaas";
-    const isPink = slug === "gustav1000" || slug === "glassmanet";
+    const isPink = slug === "gustav1000" || slug === "glassmanet" || slug === "tre40fire";
     const accent = isGreen
       ? { text: "text-NovaGreen", textMuted: "text-NovaGreen/80", border: "border-NovaGreen/30", bg: "bg-NovaGreen", bgHover: "hover:bg-NovaGreen/80", back: "text-NovaGreen/70 hover:text-NovaGreen", ig1: "/instagram_green1.webp", ig2: "/instagram_green2.webp" }
       : isPink

@@ -5,7 +5,7 @@ export default function BackgroundWrapper({ children }: { children: React.ReactN
     const pathname = usePathname();
     const isArtister = pathname.startsWith("/artister");
     const isGreen = pathname.endsWith("vorssamlingen") || pathname.endsWith("/marie-loevaas") || pathname.endsWith("artister");
-    const isPink = pathname.startsWith("/frivillig") || pathname.endsWith("gustav1000") || pathname.endsWith("glassmanet");
+    const isPink = pathname.startsWith("/frivillig") || pathname.endsWith("gustav1000") || pathname.endsWith("glassmanet") || pathname.endsWith("tre40fire");
     //const isOrange = !isGreen && !isPink;
 
     const background = isGreen

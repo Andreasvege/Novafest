@@ -19,10 +19,10 @@ import NovaHeader from "@/components/novaheader";
       <main className="p-6 text-NovaBlack">
         <section className="text-center py-4">                                                                              
           <h1 className="text-6xl md:text-8xl bg-NovaBlack text-NovaGreen font-bold mb-4 inline-block">Artister</h1>
-          <p className="text-xl text-NovaGreen/70">23. - 25. April 2026</p>                                                 
+          <p className="text-xl font-bold text-NovaGreen/70">23. - 25. April 2026</p>                                                 
         </section>                                                                                                           
                                                                                                                              
-        <section className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto py-8">                                     
+        <section className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto py-0">                                     
           {artists.map((artist) => (                        
             <Link                                                                                                            
               key={artist.id}                               

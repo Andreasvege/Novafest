@@ -10,7 +10,7 @@ export const Navbar = () => {
     const pathname = usePathname();
 
     const isGreen = pathname.endsWith("vorssamlingen") || pathname.endsWith("/marie-loevaas") || pathname.endsWith("artister");
-    const isPink = pathname.startsWith("/frivillig") || pathname.endsWith("gustav1000") || pathname.endsWith("glassmanet");
+    const isPink = pathname.startsWith("/frivillig") || pathname.endsWith("gustav1000") || pathname.endsWith("glassmanet") || pathname.endsWith("tre40fire");
     const isOrange = !isGreen && !isPink;
     const accent = isGreen
       ? { text: "text-NovaGreen", 

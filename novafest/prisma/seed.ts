@@ -64,35 +64,39 @@ async function main() {
     data: [
       {
         name: "Uironisk Distanse",
-        imageUrl: null,
-        link: null,
+        imageUrl: "uironiskdistanse.png",
+        link: "https://www.instagram.com/uironiskdistanse/",
         time: new Date("2026-04-24T18:00:00.000Z"), // 20:00 norsk tid
         dayId: fredag.id,
-        description: "Kommer snart.",
+        description:
+          "Uironisk Distanse er et skranglete indie-pop-rock band som siden starten i 2023 har balansert ironisk distanse med høy ambisjon. I 2024 ble de månedens urørt med låten «Overkvinne», og siden den gang har de blant annet vært å se på scener som John Dee, Parkteateret og Kulturhuset.\n\nNå er de straks aktuelle med debutplaten «Kommet for å bli inntil videre» – et album som godt reflekterer bandets ånd – enkle akkorder, lekne tekster og dansbare refreng. Albumet slippes 1. mai 2026.",
       },
       {
         name: "Parkvesenet",
-        imageUrl: null,
-        link: null,
+        imageUrl: "parkvesenet.png",
+        link: "https://www.instagram.com/parkvesenet/",
         time: new Date("2026-04-24T19:15:00.000Z"), // 21:15 norsk tid
         dayId: fredag.id,
-        description: "Kommer snart.",
+        description:
+          "Parkvesenet er basert i Oslo, og har vært innom mange sjangere. Det startet som et slags DIY-indie-emo-prosjekt. Det skulle være sårt og rått. Siden da har de blitt mer maniske, styggere, raskere hi-hatter, mer moshpit, mer fuzz. Man kan kalle det post-punk, indie eller noe annet.\n\nDe holder fortsatt fast på at de vil si noe, og avviser at ironien skal infisere vår generasjon til den grad at de ikke kan stå for teksten. Du finner fortsatt melankolske gitarlinjer, lengtende tekster og fine synther oppi alt dette.\n\nParkvesenet er godt gjennomtenkt og skrevet ned i farta på en gang. Det er frekt, kjærlig, brutalt og deilig. De vil skrike og danse seg ut av marerittet 2026 sammen med alle som vil høre på. Og de har ny EP på vei!",
       },
       {
         name: "Tre40Fire",
-        imageUrl: null,
-        link: null,
+        imageUrl: "tre40fire.png",
+        link: "https://www.instagram.com/tre40fire/",
         time: new Date("2026-04-24T20:30:00.000Z"), // 22:30 norsk tid
         dayId: fredag.id,
-        description: "Kommer snart.",
+        description:
+          "Tre40Fire blander sjangre som de skulle vært ingredienser, og serverer låter de beskriver som «hip-pop». De kombinerer ukonvensjonelle produksjoner og interessante tekster med en smittsom og energisk stemning, både i musikken og på scenen.\n\nGruppens låter er resultatet av mange ulike referanser – fra Cezinando og BROCKHAMPTON til PinkPantheress og James Blake – mikset med dansbare klubbrytmer og unike melodier.\n\nBandet har blitt anbefalt gjentatte ganger av P3, med blant annet ukas låt og flere listinger, og har vært ukens artist i både Gaffa Norge og Danmark – der de for 2025 også ble nominert til «Årets Hiphop» på Gaffaprisen.",
       },
       {
-        name: "Safario",
-        imageUrl: null,
-        link: null,
+        name: "Kacper",
+        imageUrl: "kacper.png",
+        link: "https://www.instagram.com/safario__/",
         time: new Date("2026-04-24T21:45:00.000Z"), // 23:45 norsk tid
         dayId: fredag.id,
-        description: "Kommer snart.",
+        description:
+          "Årets headliner, Kacper (FKA Safario), er snart klar for å slippe sitt første album under sitt ekte navn!\n\nHan er klar til å spille både nye og gamle bangers på Novafest 2026.",
       },
     ],
   });
@@ -129,11 +133,12 @@ async function main() {
       },
       {
         name: "DJ Refel",
-        imageUrl: null,
-        link: null,
+        imageUrl: "refel.png",
+        link: "https://www.instagram.com/callherrefel/",
         time: new Date("2026-04-25T21:45:00.000Z"), // 23:45 norsk tid
         dayId: lordag.id,
-        description: "Kommer snart.",
+        description:
+          "DJ Refel er en lokal Oslo DJ med røtter fra Irak. Siden 2019 har hun spilt på de største klubbene i Oslo, med en rykende lidenskap for eksperimentelle lyder og musikkstiler fra sør for ekvator.\n\nVed å blande sjangre som Middle Eastern Deep-House, hiphop fra Palestina, Acid-Techno fra Frankrike, Egyptian Street Music, Brazilian Funk, Afro-House fra SA, Syrian Dabke Fusion og house fra Libanon, har hun introdusert nye lyder til klubbarenaer som Kulturhuset, Youngs, Internasjonalen, Blitz-huset, Jakob Kirke, Revolver og Café Sør.\n\nHun har også spilt på festivaler som Oslo World Music Festival, Oslo Pride, Insomnia Festival i Tromsø, Oslo Triennale 2019 og Hus-Maraton på Dramatikkens hus. Som resident på Elsker i Oslo er målet hennes å skape et fristed og danserom for skeive og flerkulturelle gjennom unike musikalske opplevelser.",
       },
     ],
   });
