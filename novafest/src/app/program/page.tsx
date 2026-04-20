@@ -33,9 +33,9 @@ function formatWeekday(date: Date): string {
 }
 
 const dayConfig = [
-  { gradient: "/Oransje.png", badge: "/logo.png",       color: "#f9a422" },
-  { gradient: "/Grønn.png",   badge: "/logo_green.png", color: "#58B847" },
-  { gradient: "/Rosa.png",    badge: "/logo_rosa.png",  color: "#EC1D8E" },
+  { gradient: "/Oransje.webp", badge: "/logo.webp",       color: "#f9a422", doors: "Dørene åpner 18:30", extra: { time: "17:00", name: "Musikkbingo i galleriet" } },
+  { gradient: "/Grønn.webp",   badge: "/logo_green.webp", color: "#58B847", doors: "Dørene åpner 19:30", extra: null },
+  { gradient: "/Rosa.webp",    badge: "/logo_rosa.webp",  color: "#EC1D8E", doors: "Dørene åpner 19:00", extra: { time: "13:00", name: "Klesmarked i foajeen" } },
 ];
 
 export default async function ProgramPage() {
@@ -52,7 +52,7 @@ export default async function ProgramPage() {
         <span className="bg-NovaBlack text-NovaOrange px-4 py-1 inline-block">Program</span>
       </h1>
 
-      <div className="grid gap-6 max-w-6xl mx-auto" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+      <div className="grid gap-6 max-w-[84rem] mx-auto" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>
         {days.map((day, i) => {
           const cfg = dayConfig[i % dayConfig.length];
           const weekday = formatWeekday(day.date);
@@ -71,9 +71,12 @@ export default async function ProgramPage() {
                 boxShadow: "-6px 6px 0px #181818",
               }}
             >
-              {/* Dato øverst til høyre */}
-              <div className="flex justify-end px-6 pt-6">
-                <span className="text-2xl font-bold bg-NovaBlack px-1" style={{ color: cfg.color }}>
+              {/* Dato og dører øverst */}
+              <div className="flex justify-between items-start px-6 pt-6">
+                <span className="text-lg font-bold bg-NovaBlack px-1" style={{ color: cfg.color, fontFamily: "Redaction50-Italic" }}>
+                  {cfg.doors}
+                </span>
+                <span className="text-2xl font-bold bg-NovaBlack px-1" style={{ color: cfg.color, fontFamily: "Redaction50-Italic" }}>
                   {date}
                 </span>
               </div>
@@ -88,6 +91,16 @@ export default async function ProgramPage() {
                 </h2>
               </div>
 
+              {/* Ekstra arrangement */}
+              {cfg.extra && <div className="flex flex-col items-start px-6 pt-6 gap-1">
+                <span className="text-sm font-bold leading-none px-1" style={{ color: "#181818", backgroundColor: cfg.color, fontFamily: "Redaction50-Italic" }}>
+                  {cfg.extra.time}
+                </span>
+                <span className="font-bold leading-tight px-1" style={{ color: "#181818", backgroundColor: cfg.color, fontSize: "clamp(1rem, 2vw, 1.4rem)" }}>
+                  {cfg.extra.name}
+                </span>
+              </div>}
+
               {/* Artistliste */}
               <div className="flex flex-col px-6 pt-6 gap-3 flex-1">
                 {day.artists.map((artist) => (
@@ -95,7 +108,7 @@ export default async function ProgramPage() {
                     {artist.time && (
                       <span
                         className="text-xl font-bold leading-none mb-1 bg-NovaBlack px-1"
-                        style={{ color: cfg.color }}
+                        style={{ color: cfg.color, fontFamily: "Redaction50-Italic" }}
                       >
                         {formatTime(artist.time)}
                       </span>
@@ -129,7 +142,9 @@ export default async function ProgramPage() {
         })}
       </div>
 
-      
+      <p className="text-center text-NovaOrange font-bold text-lg mt-10 bg-NovaBlack/60 px-4 py-2 max-w-xl mx-auto">
+        Hele arrangementet skjer på Betong på Chateau Neuf
+      </p>
     </main>
   );
 }

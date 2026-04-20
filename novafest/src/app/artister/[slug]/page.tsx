@@ -21,17 +21,17 @@
     const isGreen = slug === "vorssamlingen" || slug === "marie-loevaas";
     const isPink = slug === "gustav1000" || slug === "glassmanet";
     const accent = isGreen
-      ? { text: "text-NovaGreen", textMuted: "text-NovaGreen/80", border: "border-NovaGreen/30", bg: "bg-NovaGreen", bgHover: "hover:bg-NovaGreen/80", back: "text-NovaGreen/70 hover:text-NovaGreen", ig1: "/instagram_green1.png", ig2: "/instagram_green2.png" }
+      ? { text: "text-NovaGreen", textMuted: "text-NovaGreen/80", border: "border-NovaGreen/30", bg: "bg-NovaGreen", bgHover: "hover:bg-NovaGreen/80", back: "text-NovaGreen/70 hover:text-NovaGreen", ig1: "/instagram_green1.webp", ig2: "/instagram_green2.webp" }
       : isPink
-      ? { text: "text-NovaPink", textMuted: "text-NovaPink/80", border: "border-NovaPink/30", bg: "bg-NovaPink", bgHover: "hover:bg-NovaPink/80", back: "text-NovaPink/70 hover:text-NovaPink", ig1: "/instagram_pink1.png", ig2: "/instagram_pink2.png" }
-      : { text: "text-NovaOrange", textMuted: "text-NovaOrange/80", border: "border-NovaOrange/30", bg: "bg-NovaOrange", bgHover: "hover:bg-NovaOrange/80", back: "text-NovaOrange/70 hover:text-NovaOrange", ig1: "/instagram_orange1.png", ig2: "/instagram_orange2.png" };
+      ? { text: "text-NovaPink", textMuted: "text-NovaPink/80", border: "border-NovaPink/30", bg: "bg-NovaPink", bgHover: "hover:bg-NovaPink/80", back: "text-NovaPink/70 hover:text-NovaPink", ig1: "/instagram_pink1.webp", ig2: "/instagram_pink2.webp" }
+      : { text: "text-NovaOrange", textMuted: "text-NovaOrange/80", border: "border-NovaOrange/30", bg: "bg-NovaOrange", bgHover: "hover:bg-NovaOrange/80", back: "text-NovaOrange/70 hover:text-NovaOrange", ig1: "/instagram_orange1.webp", ig2: "/instagram_orange2.webp" };
 
     return (
       <main className={`p-6 my-4 max-w-4xl mx-auto ${accent.text}`}>
 
         <section className="flex justify-center mb-4">
           {artist.imageUrl && (
-            <img src={"/artistside_bilder/" + artist.imageUrl} alt={artist.name} className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[650px] h-auto rounded" />
+            <img src={"/artistside_bilder/" + artist.imageUrl.replace(/\.png$/i, ".webp")} alt={artist.name} className="w-full max-w-[400px] md:max-w-[500px] lg:max-w-[650px] h-auto rounded" />
           )}
         </section>
         <section className="max-w-3xl mx-auto py-12">

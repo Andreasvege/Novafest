@@ -9,10 +9,10 @@ export default function BackgroundWrapper({ children }: { children: React.ReactN
     //const isOrange = !isGreen && !isPink;
 
     const background = isGreen
-        ? { backgroundImage: "url('/Grønn.png')", backgroundColor: "#2d292a" }
+        ? { backgroundImage: "url('/Grønn.webp')", backgroundColor: "#2d292a" }
         : isPink
-        ? { backgroundImage: "url('/Rosa.png')", backgroundColor: "#2d292a" }
-        : { backgroundImage: "url('/Oransje.png')", backgroundColor: "#2d292a" };
+        ? { backgroundImage: "url('/Rosa.webp')", backgroundColor: "#2d292a" }
+        : { backgroundImage: "url('/Oransje.webp')", backgroundColor: "#2d292a" };
 
     return (
         <div style={{

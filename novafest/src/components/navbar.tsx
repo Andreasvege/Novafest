@@ -17,19 +17,19 @@ export const Navbar = () => {
         border: "border-NovaGreen", 
         bg: "bg-NovaGreen", 
         bgHover: "hover:bg-NovaGreen/80",
-        logo: "/logo_green.png"
+        logo: "/logo_green.webp"
     } : isPink
     ? {text: "text-NovaPink",
         border: "border-NovaPink",
         bg: "bg-NovaPink",
         bgHover: "hover:bg-NovaPink/80",
-        logo: "/logo_rosa.png"
+        logo: "/logo_rosa.webp"
     }
       : { text: "text-NovaOrange", 
         border: "border-NovaOrange", 
         bg: "bg-NovaOrange", 
         bgHover: "hover:bg-NovaOrange/80",
-        logo: "/logo.png"
+        logo: "/logo.webp"
     };
 
     return (

@@ -9,7 +9,7 @@ export default function Home() {
       <section className="min-h-[54vh] flex flex-col items-center justify-center text-center">
         {/* <img src="/NovafestLogoIntro.png" className="w-[350px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00" alt="Nova fest logo"></img> */}
         {/* <Link href="https://www.instagram.com/novafest.2026/" className="text-5xl lg:text-6xl bg-NovaOrange text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaOrange), 2px -2px 0 var(--NovaOrange), -2px 2px 0 var(--NovaOrange), 2px 2px 0 var(--NovaOrange)" }}>Instagram</Link> */}
-        <img src="/forsidebanner.png" className="md:w-[800px] w-[600px]"/>
+        <img src="/forsidebanner.webp" className="md:w-[800px] w-[600px]"/>
 
       </section>
       
@@ -33,8 +33,8 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6 text-[#231f20]">Flere artister kommer snart</h2>
           <p className="text-lg text-[#231f20]/90 mb-8">Følg med her og på Instagram for oppdateringer!</p>
           <Link href="https://instagram.com/novafest.2026" target="_blank" rel="noopener noreferrer" className="mx-auto group">
-            <img src="/instagram_orange1.png" alt="Instagram" className="w-16 h-16 block group-hover:hidden" />
-            <img src="/instagram_orange2.png" alt="Instagram" className="w-16 h-16 hidden group-hover:block" />
+            <img src="/instagram_orange1.webp" alt="Instagram" className="w-16 h-16 block group-hover:hidden" />
+            <img src="/instagram_orange2.webp" alt="Instagram" className="w-16 h-16 hidden group-hover:block" />
           </Link>
         </div>
       </section>

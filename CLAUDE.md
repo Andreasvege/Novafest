@@ -50,8 +50,8 @@ Artist `[slug]`-sider bruker slug direkte (ikke pathname) for fargelogikk siden 
 - `/` — Hero (AnimertStjerne), ArtistCarousel, om-seksjon, Instagram-knapp
 - `/artister` — Artistliste fra DB, grønn farge
 - `/artister/[slug]` — Individuell artistside med bilde, beskrivelse, Instagram-knapp, tilbakeknapp
-- `/program` — "Kommer snart" placeholder
-- `/om` — Om Radio Nova og festivalen
+- `/program` — Tre dagkort med gradient PNG-bakgrunn, badge, artistliste med tider
+- `/om` — Om Radio Nova og festivalen (stil: bg-NovaBlack/60 boks, matcher frivillig-siden)
 - `/frivillig` — Frivillig-rekruttering, rosa tema, Google Form-lenke
 - `not-found.tsx` — 404-side med hover-glitch
 
@@ -66,23 +66,34 @@ Artist `[slug]`-sider bruker slug direkte (ikke pathname) for fargelogikk siden 
 ## Database (Prisma 7 + PostgreSQL)
 - Prisma client output: `src/generated/prisma`
 - `db.ts` bruker `PrismaPg`-adapter med `POSTGRES_URL` fra `.env.local`
-- `prisma.config.ts` håndterer URL — `schema.prisma` skal IKKE ha `url` i datasource (Prisma 7)
+- `prisma.config.ts` håndterer URL og seed — `schema.prisma` skal IKKE ha `url` i datasource (Prisma 7)
+- Seed-kommando i `prisma.config.ts`: `npx tsx prisma/seed.ts`
+- For Prisma CLI: `cp .env.local .env` først
 
-**Artister i DB:** Okinawa, Glassmanet, Gustav1000, Marie Løvås (marielovas), SULT, Vorssamlingen
-
-**Bilder:** Lagret i `public/artistside_bilder/` med lowercase filnavn (eks: `glassmanet.png`). DB lagrer kun filnavnet, koden prefixer `/artistside_bilder/`.
-
-**DB-oppdatering via node-script:**
-```js
-// Bruk pg-klienten direkte med .env.local
-import pg from "pg";
-const env = readFileSync(".env.local", "utf8");
-const match = env.match(/POSTGRES_URL=(.+)/);
-const connectionString = match[1].trim().replace(/^["']|["']$/g, "");
-// Kjør: node update-db.mjs
+**Schema (forenklet april 2026 — ingen Concert-tabell):**
 ```
+Year → Day → Artist
+```
+Artist har `time` (DateTime, UTC) og `dayId` direkte. Ingen Concert-modell.
 
-**Beskrivelser:** Lagret med `\n\n` for avsnittsskift. Koden bruker `whitespace-pre-wrap` + `.replace(/\\n/g, "\n")` for å rendre dem.
+**Artister i DB (2026):**
+- Torsdag: Okinawa (19:30), Marie Løvås (20:45), Sult (22:00)
+- Fredag: Uironisk Distanse (20:00), Parkvesenet (21:15), Tre40Fire (22:30), Safario (23:45)
+- Lørdag: Vorssamlingen (20:00), Glassmanet (21:30), Gustav1000 (22:45), DJ Refel (23:45)
+
+Fredag/Lørdag-artister uten fullstendig info har `description: "Kommer snart."` — oppdateres.
+
+**Bilder:** `public/artistside_bilder/` med lowercase filnavn. DB lagrer kun filnavn, koden prefixer stien.
+
+**Beskrivelser:** Lagret med `\n\n` — koden bruker `whitespace-pre-wrap` + `.replace(/\\n/g, "\n")`.
+
+**Migrering:**
+```bash
+cp .env.local .env
+npx prisma migrate dev --name <navn>
+npx prisma generate
+npx prisma db seed
+```
 
 ## Logoer og assets
 - `logo.png` — oransje logo (default)
@@ -92,7 +103,8 @@ const connectionString = match[1].trim().replace(/^["']|["']$/g, "");
 - Bakgrunner: `Oransje.png`, `Grønn.png`, `Rosa.png` (fixed 1920px, center top)
 
 ## Kjente TODO-er
-- [ ] Program-siden — faktisk innhold (Concert-tabellen har data)
+- [ ] Oppdatere artist-data for Fredag/Lørdag (beskrivelse, bilder, Instagram-lenker)
+- [ ] ArtistCarousel er hardkodet — burde hente fra DB
 - [ ] NovaHeader — hover-effekten er sannsynligvis ødelagt pga inline style-spesifisitet
 - [ ] `toSlug()` er duplisert i to filer — burde ligge i `src/utils/slug.ts`
 - [ ] `#231f20` hardkodet flere steder — burde bli en CSS-variabel

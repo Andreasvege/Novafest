@@ -20,7 +20,7 @@
           {[0, 1, 2, 3].map((copy) => (
             <div key={copy} className="relative shrink-0">
               <img
-                src="/Karusell.png"
+                src="/Karusell.webp"
                 alt={copy === 0 ? "Karusell" : ""}
                 aria-hidden={copy === 1}
                 className="h-[180px] md:h-[210px] lg:h-[275px]"

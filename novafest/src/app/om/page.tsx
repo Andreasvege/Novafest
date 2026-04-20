@@ -31,7 +31,11 @@ export default function OmPage() {
         </p>
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
           Med fokus på norske artister, studentvennlige priser og god stemning,
-          er Novafest en festival laget av studenter, for alle.
+          er Novafest en festival laget av studenter, for alle. 
+        </p><br></br>
+        <p className="text-lg text-NovaOrange/80 leading-relaxed">
+          I år tar hele festivalen sted på Chateau Neuf, og vi lover tre dager fylt med fantastisk musikk og uforglemmelige opplevelser!
+          Alle konsertene spilles på Betong i underetasjen - et perfekt lokale for å se disse kommende stjernene på nært hold.
         </p>
       </section>
 
