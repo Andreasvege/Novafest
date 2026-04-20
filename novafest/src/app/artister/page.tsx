@@ -37,7 +37,7 @@ import NovaHeader from "@/components/novaheader";
         </section>
 
         <section className="max-w-4xl text-xl mx-auto font-bold text-center py-8">                                     
-          <p className="text-NovaGreen bg-NovaBlack inline-block p-1">Flere artister kommer!</p>
+          <Link className="text-NovaGreen bg-NovaBlack inline-block p-1" href="/program">Sjekk programmet her!</Link>
         </section>                                                                                                           
       </main>                                               
     );                                                                                                                       

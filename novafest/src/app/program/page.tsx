@@ -1,5 +1,6 @@
 import { db } from "@/app/lib/db";
 import Link from "next/link";
+import Image from "next/image";
 
 function toSlug(name: string): string {
   return name
@@ -18,117 +19,117 @@ function formatTime(date: Date): string {
   });
 }
 
-function formatDayHeader(date: Date): { weekday: string; dayMonth: string } {
-  const weekday = date.toLocaleDateString("nb-NO", {
-    weekday: "long",
+function formatDate(date: Date): string {
+  return date.toLocaleDateString("nb-NO", {
+    day: "2-digit",
+    month: "2-digit",
     timeZone: "Europe/Oslo",
   });
-  const dayMonth = date.toLocaleDateString("nb-NO", {
-    day: "numeric",
-    month: "long",
-    timeZone: "Europe/Oslo",
-  });
-  return {
-    weekday: weekday.charAt(0).toUpperCase() + weekday.slice(1),
-    dayMonth,
-  };
 }
 
-const dayAccents = [
-  {
-    text: "text-NovaOrange",
-    muted: "text-NovaOrange/50",
-    bg: "bg-NovaOrange",
-    border: "border-NovaOrange/20",
-    divider: "divide-NovaOrange/10",
-    headerText: "text-NovaBlack",
-  },
-  {
-    text: "text-NovaGreen",
-    muted: "text-NovaGreen/50",
-    bg: "bg-NovaGreen",
-    border: "border-NovaGreen/20",
-    divider: "divide-NovaGreen/10",
-    headerText: "text-NovaBlack",
-  },
-  {
-    text: "text-NovaPink",
-    muted: "text-NovaPink/50",
-    bg: "bg-NovaPink",
-    border: "border-NovaPink/20",
-    divider: "divide-NovaPink/10",
-    headerText: "text-NovaBlack",
-  },
+function formatWeekday(date: Date): string {
+  const w = date.toLocaleDateString("nb-NO", { weekday: "long", timeZone: "Europe/Oslo" });
+  return w.charAt(0).toUpperCase() + w.slice(1);
+}
+
+const dayConfig = [
+  { gradient: "/Oransje.png", badge: "/logo.png",       color: "#f9a422" },
+  { gradient: "/Grønn.png",   badge: "/logo_green.png", color: "#58B847" },
+  { gradient: "/Rosa.png",    badge: "/logo_rosa.png",  color: "#EC1D8E" },
 ];
 
 export default async function ProgramPage() {
   const days = await db.day.findMany({
     orderBy: { date: "asc" },
-    include: {
-      concerts: {
-        orderBy: { time: "asc" },
-        include: { artist: true },
-      },
-    },
+    include: { artists: { orderBy: { time: "asc" } } },
   });
 
   return (
-    <main className="p-6 text-NovaOrange">
-      {/* Header */}
-      <section className="text-center py-12">
-        <h1 className="text-6xl md:text-8xl font-bold mb-4">Program</h1>
-        <p className="text-xl text-NovaOrange/70">23. – 25. April 2026</p>
-      </section>
+    <main
+      className="min-h-screen px-4 py-16"
+    >
+      <h1 className="text-center text-6xl md:text-8xl font-bold text-white mb-16">
+        <span className="bg-NovaBlack text-NovaOrange px-4 py-1 inline-block">Program</span>
+      </h1>
 
-      {/* Three-column schedule */}
-      <section className="max-w-6xl mx-auto py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-6">
-          {days.map((day, i) => {
-            const accent = dayAccents[i % dayAccents.length];
-            const { weekday, dayMonth } = formatDayHeader(day.date);
+      <div className="grid gap-6 max-w-6xl mx-auto" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))" }}>
+        {days.map((day, i) => {
+          const cfg = dayConfig[i % dayConfig.length];
+          const weekday = formatWeekday(day.date);
+          const date = formatDate(day.date);
 
-            return (
-              <div key={day.id} className={`border ${accent.border} mb-8 md:mb-0`}>
-                {/* Day header */}
-                <div className={`${accent.bg} ${accent.headerText} px-5 py-4`}>
-                  <h2 className="text-3xl font-bold">{weekday}</h2>
-                  <p className="text-sm font-bold opacity-70">{dayMonth}</p>
-                </div>
-
-                {/* Concerts */}
-                <div className={`divide-y ${accent.divider}`}>
-                  {day.concerts.length === 0 && (
-                    <p className={`px-5 py-4 text-sm ${accent.muted}`}>Ingen konserter enda</p>
-                  )}
-                  {day.concerts.map((concert) => (
-                    <div key={concert.id} className="px-5 py-4 flex gap-4 items-start">
-                      <span className={`text-sm font-bold ${accent.muted} w-12 shrink-0 mt-1`}>
-                        {formatTime(concert.time)}
-                      </span>
-                      <div>
-                        <Link
-                          href={`/artister/${toSlug(concert.artist.name)}`}
-                          className={`hover-glitch font-bold text-xl ${accent.text} leading-tight`}
-                        >
-                          {concert.artist.name}
-                        </Link>
-                        <p className={`text-sm ${accent.muted} mt-0.5`}>{concert.stage}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+          return (
+            <div
+              key={day.id}
+              className="relative flex flex-col overflow-hidden"
+              style={{
+                backgroundImage: `url('${cfg.gradient}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                minHeight: "560px",
+                border: "3px solid #181818",
+                boxShadow: "-6px 6px 0px #181818",
+              }}
+            >
+              {/* Dato øverst til høyre */}
+              <div className="flex justify-end px-6 pt-6">
+                <span className="text-2xl font-bold bg-NovaBlack px-2 py-0.5" style={{ color: cfg.color }}>
+                  {date}
+                </span>
               </div>
-            );
-          })}
-        </div>
-      </section>
 
-      {/* Note */}
-      <section className="max-w-6xl mx-auto text-center py-8">
-        <p className="text-NovaOrange bg-NovaBlack inline-block font-bold text-lg p-1">
-          Flere artister slippes fortløpende!
-        </p>
-      </section>
+              {/* Ukedag med mørk bar */}
+              <div className="bg-NovaBlack/80 px-6 py-2 mt-1">
+                <h2
+                  className="font-bold leading-none"
+                  style={{ color: cfg.color, fontSize: "clamp(3rem, 8vw, 5rem)" }}
+                >
+                  {weekday}
+                </h2>
+              </div>
+
+              {/* Artistliste */}
+              <div className="flex flex-col px-6 pt-6 gap-3 flex-1">
+                {day.artists.map((artist) => (
+                  <div key={artist.id} className="flex flex-col items-start">
+                    {artist.time && (
+                      <span
+                        className="text-xl font-bold leading-none mb-1 bg-NovaBlack px-2 py-0.5"
+                        style={{ color: cfg.color }}
+                      >
+                        {formatTime(artist.time)}
+                      </span>
+                    )}
+                    <Link
+                      href={`/artister/${toSlug(artist.name)}`}
+                      className="hover-glitch font-bold leading-tight bg-NovaBlack px-2"
+                      style={{
+                        color: cfg.color,
+                        fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)",
+                      }}
+                    >
+                      {artist.name}
+                    </Link>
+                  </div>
+                ))}
+              </div>
+
+              {/* Badge nederst til høyre */}
+              <div className="flex justify-end px-6 pb-6 pt-4">
+                <Image
+                  src={cfg.badge}
+                  alt="Novafest 2026"
+                  width={80}
+                  height={80}
+                  className="rounded-full"
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      
     </main>
   );
 }
