@@ -87,16 +87,36 @@
 
 /* NovaHeader */
 .nova-header {
-  color: var(--c);
+  display: inline;
   background-color: var(--bg);
-  text-shadow: -2px -2px 0 var(--bg), 2px -2px 0 var(--bg), -2px 2px 0 var(--bg), 2px 2px 0 var(--bg);
-  transition: all 0.05s;
+  line-height: 0.2;
+  padding: -5px -5px;
+  transition: background-color 0.05s;
+}
+
+.nova-header .nova-header-text {
+  display: inline-block;
+  transform: translate(4px, 0px);
+  color: var(--c);
+  text-shadow:
+    -2px -2px 0 var(--bg),  2px -2px 0 var(--bg),
+    -2px  2px 0 var(--bg),  2px  2px 0 var(--bg),
+     0   -2px 0 var(--bg),  0    2px 0 var(--bg),
+    -2px  0   0 var(--bg),  2px  0   0 var(--bg);
+  transition: color 0.05s, text-shadow 0.05s, -webkit-text-stroke-color 0.05s;
 }
 
 .nova-header:hover {
-  color: var(--bg);
   background-color: var(--c);
-  text-shadow: -2px -2px 0 var(--c), 2px -2px 0 var(--c), -2px 2px 0 var(--c), 2px 2px 0 var(--c);
+}
+
+.nova-header:hover .nova-header-text {
+  color: var(--bg);
+  text-shadow:
+    -2px -2px 0 var(--c),  2px -2px 0 var(--c),
+    -2px  2px 0 var(--c),  2px  2px 0 var(--c),
+     0   -2px 0 var(--c),  0    2px 0 var(--c),
+    -2px  0   0 var(--c),  2px  0   0 var(--c);
 }
 
 /* Bildekarusell landing page */
@@ -111,7 +131,7 @@
 
 .animate-carousel {
   will-change: transform;
-  animation: carousel 20s linear infinite;
+  animation: carousel 60s linear infinite;
   transition: transform 0.1s;
 }
 

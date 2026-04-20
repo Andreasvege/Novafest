@@ -1,6 +1,8 @@
 import { db } from "@/app/lib/db";
 import Link from "next/link";
 import Image from "next/image";
+import NovaHeader from "@/components/novaheader";
+import ArtistCarousel from "@/components/artistcarousel";
 
 function toSlug(name: string): string {
   return name
@@ -50,6 +52,9 @@ export default async function ProgramPage() {
     >
       <h1 className="text-center text-6xl md:text-8xl font-bold text-white mb-6">
         <span className="bg-NovaBlack text-NovaOrange px-4 py-1 inline-block">Program</span>
+        
+        
+        
       </h1>
 
       <div className="grid gap-6 max-w-[84rem] mx-auto" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))" }}>

@@ -1,45 +1,46 @@
-  import Link from "next/link";
+import Link from "next/link";
 
-  type Artist = {
-    name: string;
-    href: string;
-    left: string;   // f.eks. "0%"
-    width: string;  // f.eks. "22%"
-  };
+const artists = [
+  { name: "Okinawa",           href: "/artister/okinawa",           left: "0%",    width: "9.1%" },
+  { name: "Glassmanet",        href: "/artister/glassmanet",        left: "9.1%",  width: "9.1%" },
+  { name: "Sult",              href: "/artister/sult",              left: "18.2%", width: "9.1%" },
+  { name: "Marie Løvås",       href: "/artister/marie-loevaas",     left: "27.3%", width: "9.1%" },
+  { name: "Kacper",            href: "/artister/kacper",            left: "36.4%", width: "9.1%" },
+  { name: "Parkvesenet",       href: "/artister/parkvesenet",       left: "45.5%", width: "9.1%" },
+  { name: "DJ Refel",          href: "/artister/dj-refel",          left: "54.5%", width: "9.1%" },
+  { name: "Vorssamlingen",     href: "/artister/vorssamlingen",     left: "63.6%", width: "9.1%" },
+  { name: "Uironisk Distanse", href: "/artister/uironisk-distanse", left: "72.7%", width: "9.1%" },
+  { name: "Tre40Fire",         href: "/artister/tre40fire",         left: "81.8%", width: "9.1%" },
+  { name: "Gustav1000",        href: "/artister/gustav1000",        left: "90.9%", width: "9.1%" },
+];
 
-  const artists: Artist[] = [
-    { name: "Okinawa",     href: "/artister/okinawa",     left: "0%",  width: "20%" },
-    { name: "Glass Manet", href: "/artister/glassmanet", left: "40%", width: "20%" },
-    { name: "Marie Løvås", href: "/artister/marie-loevaas", left: "80%", width: "20%" },
-  ];
-
-  export default function ArtistCarousel() {
-    return (
-      <section className="w-full overflow-hidden">
-        <div className="w-max flex animate-carousel">
-          {[0, 1, 2, 3].map((copy) => (
-            <div key={copy} className="relative shrink-0">
-              <img
-                src="/Karusell.webp"
-                alt={copy === 0 ? "Karusell" : ""}
-                aria-hidden={copy === 1}
-                className="h-[180px] md:h-[210px] lg:h-[275px]"
-                fetchPriority="high"
+export default function ArtistCarousel() {
+  return (
+    <section className="w-full overflow-hidden">
+      <div className="w-max flex animate-carousel">
+        {[0, 1, 2, 3].map((copy) => (
+          <div key={copy} className="relative shrink-0">
+            <img
+              src="/karusell_ny.webp"
+              alt={copy === 0 ? "Artistkarusell" : ""}
+              aria-hidden={copy !== 0}
+              className="h-[180px] md:h-[210px] lg:h-[240px]"
+              fetchPriority="high"
+            />
+            {artists.map((artist) => (
+              <Link
+                key={artist.name}
+                href={artist.href}
+                aria-label={artist.name}
+                tabIndex={copy !== 0 ? -1 : undefined}
+                aria-hidden={copy !== 0 ? true : undefined}
+                className="absolute inset-y-0"
+                style={{ left: artist.left, width: artist.width }}
               />
-              {artists.map((artist) => (
-                <Link
-                  key={artist.name}
-                  href={artist.href}
-                  aria-label={artist.name}
-                  tabIndex={copy === 1 ? -1 : undefined}
-                  aria-hidden={copy === 1 ? true : undefined}
-                  className="absolute inset-y-0"
-                  style={{ left: artist.left, width: artist.width }}
-                />
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  }
+            ))}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

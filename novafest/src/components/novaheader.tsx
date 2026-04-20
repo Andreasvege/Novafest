@@ -12,19 +12,13 @@ export default function NovaHeader({
   return (
     <h2 className="text-5xl lg:text-6xl font-bold mt-12">
       <span
-        className="nova-header inline relative hover-glitch"
+        className="nova-header hover-glitch"
         style={{
           ["--c" as string]: color,
           ["--bg" as string]: bgColor,
-          color: color,
-          backgroundColor: bgColor,
-          textShadow: `-2px -2px 0 ${bgColor}, 2px -2px 0 ${bgColor}, -2px 2px 0 ${bgColor}, 2px 2px 0 ${bgColor}`,
-          padding: "2px 8px",
-          top: "5px",
-          left: "0px",
         }}
       >
-        {children}
+        <span className="nova-header-text">{children}</span>
       </span>
     </h2>
   );
