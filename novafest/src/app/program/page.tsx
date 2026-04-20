@@ -73,13 +73,13 @@ export default async function ProgramPage() {
             >
               {/* Dato øverst til høyre */}
               <div className="flex justify-end px-6 pt-6">
-                <span className="text-2xl font-bold bg-NovaBlack px-2 py-0.5" style={{ color: cfg.color }}>
+                <span className="text-2xl font-bold bg-NovaBlack px-1" style={{ color: cfg.color }}>
                   {date}
                 </span>
               </div>
 
               {/* Ukedag med mørk bar */}
-              <div className="bg-NovaBlack/80 px-6 py-2 mt-1">
+              <div className="bg-NovaBlack px-4 py-1 mt-1">
                 <h2
                   className="font-bold leading-none"
                   style={{ color: cfg.color, fontSize: "clamp(3rem, 8vw, 5rem)" }}
@@ -94,7 +94,7 @@ export default async function ProgramPage() {
                   <div key={artist.id} className="flex flex-col items-start">
                     {artist.time && (
                       <span
-                        className="text-xl font-bold leading-none mb-1 bg-NovaBlack px-2 py-0.5"
+                        className="text-xl font-bold leading-none mb-1 bg-NovaBlack px-1"
                         style={{ color: cfg.color }}
                       >
                         {formatTime(artist.time)}
@@ -102,7 +102,7 @@ export default async function ProgramPage() {
                     )}
                     <Link
                       href={`/artister/${toSlug(artist.name)}`}
-                      className="hover-glitch font-bold leading-tight bg-NovaBlack px-2"
+                      className="hover-glitch font-bold leading-tight bg-NovaBlack px-1"
                       style={{
                         color: cfg.color,
                         fontSize: "clamp(1.6rem, 3.5vw, 2.6rem)",
