@@ -2,7 +2,7 @@
 
 Offisiell nettside for Novafest 2026 — Radio Novas årlige musikkfestival i Oslo, 23.–25. april.
 
-<img src="public/forsidebanner.webp" width="600" alt="Novafest 2026">
+<img src="novafest/public/forsidebanner.webp" width="600" alt="Novafest 2026">
 
 
 
