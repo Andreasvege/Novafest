@@ -6,11 +6,15 @@ export default function Home() {
   return (
     <main className="flex-1 flex flex-col text-NovaOrange">
       {/* Hero Section */}
-      <section className="min-h-[54vh] flex flex-col items-center justify-center text-center">
+      <section className="min-h-[38vh] md:min-h-[44vh] flex flex-col items-center justify-center text-center">
         {/* <img src="/NovafestLogoIntro.png" className="w-[350px] md:w-[400px] lg:w-[450px] bg-[#231f20]/00" alt="Nova fest logo"></img> */}
         {/* <Link href="https://www.instagram.com/novafest.2026/" className="text-5xl lg:text-6xl bg-NovaOrange text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaOrange), 2px -2px 0 var(--NovaOrange), -2px 2px 0 var(--NovaOrange), 2px 2px 0 var(--NovaOrange)" }}>Instagram</Link> */}
         <img src="/forsidebanner.webp" alt="Novafest 2026 — 23.–25. april" className="lg:w-[800px] md:w-[600px] w-[464px]"/>
-
+      </section>
+      <section className="text-center pt-0 pb-8">
+        <Link href="https://novafest.ticketco.events/no/nb/e/novafest_2026" target="_blank" rel="noopener noreferrer">
+          <h3 className="text-4xl md:text-6xl bg-NovaBlack text-NovaOrange mb-2 font-bold inline-block hover-glitch hover:bg-NovaOrange hover:text-NovaBlack">BILLETTER I SALG NÅ</h3>
+        </Link>
       </section>
       
       {/* Artist Carousel */}
@@ -19,7 +23,6 @@ export default function Home() {
 
       {/* About Section */}
       <section className="py-16 px-4 max-w-3xl mx-auto text-center">
-        <h1 className="text-4xl font-bold mb-6">23. - 25. April</h1>
         <h2 className="text-3xl font-bold mb-6">Der stjerner blir født</h2>
         <p className="text-lg text-NovaOrange/95 leading-relaxed font-bold">
           Novafest er Radio Novas årlige musikkfestival.

@@ -2,14 +2,36 @@ export default function OmPage() {
   return (
     <main className="p-6 my-8 text-NovaOrange bg-NovaBlack/60 max-w-6xl mx-auto">
       {/* Header */}
-      <section className="text-center py-12">
+      <section className="text-center py-8">
         <h1 className="text-6xl md:text-8xl font-bold mb-4">Om oss</h1>
-        <p className="text-xl text-NovaOrange/70">Historien bak Novafest</p>
+        <p className="text-xl text-NovaOrange/70">Lær mer om Novafest og Radio Nova</p>
       </section>
 
-      {/* About Radio Nova */}
-      <section className="max-w-3xl mx-auto py-12">
-        <h2 className="text-3xl font-bold mb-6">Radio Nova</h2>
+      {/* Om Novafest */}
+      <section className="max-w-3xl mx-auto py-8">
+        <h2 className="text-3xl font-bold mb-6">Festivalen</h2>
+        <p className="text-lg text-NovaOrange/80 leading-relaxed mb-4">
+          Novafest er Radio Nova sin årlige feiring av musikk og studentkultur.
+          Det som startet som et liten samling har vokst til å bli en av
+          Oslos mest unike og etterlengtede studentarrangementer.
+        </p>
+        <p className="text-lg text-NovaOrange/80 leading-relaxed">
+          Med fokus på unge norske artister, studentvennlige priser og god stemning,
+          er Novafest en festival laget av studenter, for alle. 
+        </p>
+        <br />
+        <p className="text-lg text-NovaOrange/80 leading-relaxed">
+          I år tar hele festivalen sted på Chateau Neuf, og vi lover tre dager fylt med fantastisk musikk og uforglemmelige opplevelser!
+          Alle konsertene spilles på Betong i underetasjen - et perfekt lokale for å se disse kommende stjernene på nært hold.
+        </p>
+        <br />
+        <p className="text-lg text-NovaOrange/80 leading-relaxed">
+          Billetter kan kjøpes på forhånd eller i døra. Vi anbefaler alle å sikre seg plass så tidlig som mulig for å ikke gå glipp av noen av de fantastiske artistene vi har sikret oss i år!
+        </p>
+        </section>
+
+      {/* Om Radio Nova */}
+      <section className="max-w-3xl mx-auto py-12 border-t border-NovaOrange/30"><h2 className="text-3xl font-bold mb-6">Radio Nova</h2>
         <p className="text-lg text-NovaOrange/80 leading-relaxed mb-4">
           Radio Nova er studentradioen i Oslo, drevet av over 250 studenter!
           Siden oppstarten for over 40 år siden har vi vært en plattform for nye stemmer, god musikk
@@ -20,25 +42,8 @@ export default function OmPage() {
           spenner fra musikk og kultur til nyheter og underholdning.
         </p>
       </section>
+        
 
-      {/* About the Festival */}
-      <section className="max-w-3xl mx-auto py-12 border-t border-NovaOrange/30">
-        <h2 className="text-3xl font-bold mb-6">Festivalen</h2>
-        <p className="text-lg text-NovaOrange/80 leading-relaxed mb-4">
-          Novafest er vår årlige feiring av musikk og studentkultur.
-          Det som startet som et liten samling har vokst til å bli en av
-          Oslos mest etterlengtede studentarrangementer.
-        </p>
-        <p className="text-lg text-NovaOrange/80 leading-relaxed">
-          Med fokus på norske artister, studentvennlige priser og god stemning,
-          er Novafest en festival laget av studenter, for alle. 
-        </p>
-        <br />
-        <p className="text-lg text-NovaOrange/80 leading-relaxed">
-          I år tar hele festivalen sted på Chateau Neuf, og vi lover tre dager fylt med fantastisk musikk og uforglemmelige opplevelser!
-          Alle konsertene spilles på Betong i underetasjen - et perfekt lokale for å se disse kommende stjernene på nært hold.
-        </p>
-      </section>
 
       {/* Contact */}
       <section className="max-w-3xl mx-auto py-12 border-t border-NovaOrange/30">

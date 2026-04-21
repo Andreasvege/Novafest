@@ -1,16 +1,18 @@
 export default function FrivilligPage() {
   return (
-    <main className="p-6 pb-16 text-NovaPink bg-NovaBlack/60 max-w-6xl mx-auto">
+    <main className="p-6 pb-16 text-NovaPink bg-NovaBlack/60 max-w-5xl mx-auto">
       {/* Header */}
       <section className="text-center py-12">
-        <h1 className="text-6xl md:text-8xl font-bold mb-4">Vi trenger frivillige!</h1>
-        <p className="text-xl text-NovaPink/70">Vil du hjelpe oss med å lage norges beste studentfestival?</p>
+        <h1 className="text-6xl md:text-6xl font-bold py-2 mb-4">Takk til alle som har <br></br> meldt seg som frivillige!</h1>
+        <br />
+        <p className="text-2xl font-bold text-NovaPink/80">Vi sees på Novafest 23-25. April!</p>
       </section>
 
-      {/* About Radio Nova */}
-      <section className="text-center max-w-3xl mx-auto py-6">
+      {/* Søk her */}
+       {/*<section className="text-center max-w-3xl mx-auto py-6">
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSd18AVG9B5cz-QueKPoLdhM_OWxJxK43KHR8MmGuwx57OCFNQ/viewform" target="_blank" rel="noopener noreferrer" className="text-5xl lg:text-6xl bg-NovaPink text-NovaBlack hover-glitch font-bold mt-12" style={{ textShadow: "-2px -2px 0 var(--NovaPink), 2px -2px 0 var(--NovaPink), -2px 2px 0 var(--NovaPink), 2px 2px 0 var(--NovaPink)" }}>Søk her</a>
       </section>
+       */}
     
 
       {/* Contact */}
