@@ -31,7 +31,8 @@
       "Bash(python3 -c \"from PIL import Image; img = Image.open\\('karusell_ny.png'\\); img.save\\('karusell_ny.webp', 'WEBP', quality=85\\)\")",
       "Bash(pip3 install *)",
       "Bash(python3 -c \"from PIL import Image; img = Image.open\\('karusell_ny.png'\\); img.save\\('karusell_ny.webp', 'WEBP', quality=85\\); print\\('Done'\\)\")",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(git *)"
     ]
   }
 }
