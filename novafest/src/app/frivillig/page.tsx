@@ -1,6 +1,6 @@
 export default function FrivilligPage() {
   return (
-    <main className="p-6 text-NovaPink bg-NovaBlack/60 max-w-6xl mx-auto my-8">
+    <main className="p-6 pb-16 text-NovaPink bg-NovaBlack/60 max-w-6xl mx-auto">
       {/* Header */}
       <section className="text-center py-12">
         <h1 className="text-6xl md:text-8xl font-bold mb-4">Vi trenger frivillige!</h1>

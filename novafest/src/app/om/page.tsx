@@ -1,6 +1,6 @@
 export default function OmPage() {
   return (
-    <main className="p-6 pb-16 text-NovaOrange bg-NovaBlack/60 max-w-6xl mx-auto my-8">
+    <main className="p-6 my-8 text-NovaOrange bg-NovaBlack/60 max-w-6xl mx-auto">
       {/* Header */}
       <section className="text-center py-12">
         <h1 className="text-6xl md:text-8xl font-bold mb-4">Om oss</h1>
@@ -32,7 +32,8 @@ export default function OmPage() {
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
           Med fokus på norske artister, studentvennlige priser og god stemning,
           er Novafest en festival laget av studenter, for alle. 
-        </p><br></br>
+        </p>
+        <br />
         <p className="text-lg text-NovaOrange/80 leading-relaxed">
           I år tar hele festivalen sted på Chateau Neuf, og vi lover tre dager fylt med fantastisk musikk og uforglemmelige opplevelser!
           Alle konsertene spilles på Betong i underetasjen - et perfekt lokale for å se disse kommende stjernene på nært hold.
@@ -48,6 +49,11 @@ export default function OmPage() {
         <p className="text-lg text-NovaOrange/80">
           Instagram: <a href="https://instagram.com/novafest.2026" className="hover-glitch text-NovaOrange font-bold hover:underline">@novafest.2026</a>
         </p>
+      </section>
+
+      {/* Støttespillere */}
+      <section className="max-w-3xl mx-auto py-12 border-t border-NovaOrange/30 flex justify-center">
+        <img src="/Oslologo-tekst-sort-skjerm.png" className="w-150 [filter:brightness(0)_saturate(100%)_invert(63%)_sepia(96%)_saturate(500%)_hue-rotate(350deg)_brightness(97%)]" alt="Økonomisk støtte av Oslo kommune" />
       </section>
     </main>
   );

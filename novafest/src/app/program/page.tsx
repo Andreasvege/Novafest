@@ -1,8 +1,7 @@
 import { db } from "@/app/lib/db";
 import Link from "next/link";
 import Image from "next/image";
-import NovaHeader from "@/components/novaheader";
-import ArtistCarousel from "@/components/artistcarousel";
+
 
 function toSlug(name: string): string {
   return name

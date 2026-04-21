@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 
@@ -7,7 +7,18 @@ import Link from "next/link";
 
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const closeButtonRef = useRef<HTMLButtonElement>(null);
     const pathname = usePathname();
+
+    useEffect(() => {
+        if (isOpen) closeButtonRef.current?.focus();
+    }, [isOpen]);
+
+    useEffect(() => {
+        const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setIsOpen(false); };
+        document.addEventListener("keydown", onKey);
+        return () => document.removeEventListener("keydown", onKey);
+    }, []);
 
     const isGreen = pathname.endsWith("vorssamlingen") || pathname.endsWith("/marie-loevaas") || pathname.endsWith("artister") || pathname.endsWith("kacper");
     const isPink = pathname.startsWith("/frivillig") || pathname.endsWith("gustav1000") || pathname.endsWith("glassmanet") || pathname.endsWith("tre40fire");
@@ -33,7 +44,7 @@ export const Navbar = () => {
     };
 
     return (
-        <nav className={`p-6 m-4 bg-NovaBlack/80 border-2 ${accent.border} ${accent.text} text-xl`}>
+        <nav aria-label="Hovednavigasjon" className={`p-6 m-4 bg-NovaBlack/80 border-2 ${accent.border} ${accent.text} text-xl`}>
             <div className="flex justify-between items-center">
                 {/* Desktop / widescreen navbar */}
                 <ul className="hidden navbar:flex gap-12 text-2xl items-center">
@@ -55,7 +66,7 @@ export const Navbar = () => {
                 </ul>
                 {/* Mobile navbar */}
                 <div className="flex navbar:hidden items-center gap-4">
-                    <button onClick={() => setIsOpen(true)} aria-label="Åpne meny" className={`${accent.text} text-4xl`}>☰</button>
+                    <button onClick={() => setIsOpen(true)} aria-label="Åpne meny" aria-expanded={isOpen} aria-controls="mobile-menu" className={`${accent.text} text-4xl`}>☰</button>
                     <Link href="/">
                         <img src={accent.logo} alt="Novafest logo" className="h-16 hover:animate-spin" />
                     </Link>
@@ -67,8 +78,8 @@ export const Navbar = () => {
             </div>
 
             {/* Fullscreen menu */}
-            <div className={`fixed inset-0 bg-NovaBlack z-50 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-                <button onClick={() => setIsOpen(false)} aria-label="Lukk meny" className={`absolute top-8 left-8 ${accent.text} text-4xl`}>✕</button>
+            <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigasjonsmeny" className={`fixed inset-0 bg-NovaBlack z-50 flex flex-col items-center justify-center gap-8 transition-transform duration-300 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+                <button ref={closeButtonRef} onClick={() => setIsOpen(false)} aria-label="Lukk meny" className={`absolute top-8 left-8 ${accent.text} text-4xl`}>✕</button>
                 <Link href="/program" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Program</Link>
                 <Link href="/artister" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Artister</Link>
                 <Link href="/frivillig" className="text-4xl hover-glitch" onClick={() => setIsOpen(false)}>Bli frivillig</Link>

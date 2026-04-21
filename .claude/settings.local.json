@@ -23,7 +23,15 @@
       "Bash(npx tsc *)",
       "Bash(cwebp -q 82 -mt -quiet karusell_ny.png -o karusell_ny.webp)",
       "Bash(sips *)",
-      "Bash(cwebp -q 82 -mt -quiet karusell_ny_resized.png -o karusell_ny.webp)"
+      "Bash(cwebp -q 82 -mt -quiet karusell_ny_resized.png -o karusell_ny.webp)",
+      "Bash(cwebp karusell_ny.png -o karusell_ny.webp)",
+      "Bash(ffmpeg -i karusell_ny.png -c:v libwebp -quality 85 karusell_ny.webp -y)",
+      "Bash(magick *)",
+      "Bash(convert karusell_ny.png -quality 85 karusell_ny.webp)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('karusell_ny.png'\\); img.save\\('karusell_ny.webp', 'WEBP', quality=85\\)\")",
+      "Bash(pip3 install *)",
+      "Bash(python3 -c \"from PIL import Image; img = Image.open\\('karusell_ny.png'\\); img.save\\('karusell_ny.webp', 'WEBP', quality=85\\); print\\('Done'\\)\")",
+      "Bash(python3 *)"
     ]
   }
 }
