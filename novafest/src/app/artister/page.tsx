@@ -10,10 +10,16 @@ import NovaHeader from "@/components/novaheader";
     .replace(/å/g, "aa");         
   }                                                                                                                          
                                                             
+const HEADLINE_ORDER = ["Gustav1000", "Kacper", "Sult", "Vorssamlingen", "Uironisk Distanse"];
+
   export default async function ArtisterPage() {
     const artists = await db.artist.findMany({
-      orderBy: { name: "asc" },                                                                                              
+      orderBy: { name: "asc" },
     });
+
+    const headlines = HEADLINE_ORDER.map((name) => artists.find((a) => a.name === name)).filter(Boolean);
+    const rest = artists.filter((a) => !HEADLINE_ORDER.includes(a.name));
+    const sorted = [...headlines, ...rest] as typeof artists;
                                                                                                                              
     return (                                                
       <main className="p-6 text-NovaBlack">
@@ -23,11 +29,11 @@ import NovaHeader from "@/components/novaheader";
         </section>                                                                                                           
                                                                                                                              
         <section className="flex flex-wrap justify-center md:gap-3 gap-2 max-w-4xl mx-auto py-0">                                     
-          {artists.map((artist) => (                        
+          {sorted.map((artist) => (                        
             <Link                                                                                                            
               key={artist.id}                               
               href={`/artister/${toSlug(artist.name)}`}
-              className="hover-glitch text-NovaBlack bg-NovaGreen text-4xl sm:text-5xl md:text-6xl font-bold hover:bg-NovaBlack hover:text-NovaGreen transition-colors"
+              className="hover-glitch text-NovaBlack bg-NovaGreen text-[32px] sm:text-5xl md:text-6xl font-bold hover:bg-NovaBlack hover:text-NovaGreen transition-colors"
               style={{padding: "2px 3px"}}                                                                                                         
             >                                                                                                                
               {artist.name}                                                                                                  
