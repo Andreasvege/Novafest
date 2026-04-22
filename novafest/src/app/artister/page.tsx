@@ -10,11 +10,7 @@ import NovaHeader from "@/components/novaheader";
     .replace(/å/g, "aa");         
   }                                                                                                                          
                                                             
-<<<<<<< Updated upstream
-const HEADLINE_ORDER = ["Gustav1000", "Kacper", "Marie Løvås", "Sult", "Vorssamlingen", "Uironisk Distanse"];
-=======
 const HEADLINE_ORDER = ["Gustav1000", "Kacper", "Sult", "Vorssamlingen", "Uironisk Distanse", "Glassmanet", "Marie Løvås", "Okinawa", "Parkvesenet", "Tre40Fire", "DJ Refel"];
->>>>>>> Stashed changes
 
   export default async function ArtisterPage() {
     const artists = await db.artist.findMany({
