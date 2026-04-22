@@ -92,6 +92,22 @@
   font-family: "Redaction50-Italic", italic;
 }
 
+.hover-glitch-stable {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hover-glitch-stable::after {
+  content: attr(data-text);
+  height: 0;
+  visibility: hidden;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  font-family: 'Redaction', serif;
+}
+
 /* NovaHeader */
 .nova-header {
   display: inline;

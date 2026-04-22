@@ -30,11 +30,12 @@ const HEADLINE_ORDER = ["Gustav1000", "Kacper", "Sult", "Vorssamlingen", "Uironi
                                                                                                                              
         <section className="flex flex-wrap justify-center md:gap-3 gap-2 max-w-4xl mx-auto py-0">                                     
           {sorted.map((artist) => (                        
-            <Link                                                                                                            
-              key={artist.id}                               
+            <Link
+              key={artist.id}
               href={`/artister/${toSlug(artist.name)}`}
-              className="hover-glitch text-NovaBlack bg-NovaGreen text-[32px] sm:text-5xl md:text-6xl font-bold hover:bg-NovaBlack hover:text-NovaGreen transition-colors"
-              style={{padding: "2px 3px"}}                                                                                                         
+              className="hover-glitch hover-glitch-stable text-NovaBlack bg-NovaGreen text-[32px] sm:text-5xl md:text-6xl font-bold hover:bg-NovaBlack hover:text-NovaGreen transition-colors"
+              style={{padding: "2px 3px"}}
+              data-text={artist.name}
             >                                                                                                                
               {artist.name}                                                                                                  
             </Link>                                         
