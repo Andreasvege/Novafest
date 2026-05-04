@@ -12,8 +12,8 @@ export default function Home() {
         <img src="/forsidebanner.webp" alt="Novafest 2026 — 23.–25. april" className="lg:w-[800px] md:w-[600px] w-[464px]"/>
       </section>
       <section className="text-center pt-0 pb-8">
-        <Link href="https://novafest.ticketco.events/no/nb/e/novafest_2026" target="_blank" rel="noopener noreferrer">
-          <h3 className="text-4xl md:text-6xl bg-NovaBlack text-NovaOrange mb-2 font-bold inline-block hover-glitch hover:bg-NovaOrange hover:text-NovaBlack">BILLETTER I SALG NÅ</h3>
+        <Link href="https://instagram.com/novafest.2026" target="_blank" rel="noopener noreferrer">
+          <h3 className="text-4xl md:text-6xl bg-NovaBlack text-NovaOrange mb-2 font-bold inline-block hover-glitch hover:bg-NovaOrange hover:text-NovaBlack">TAKK FOR I ÅR</h3>
         </Link>
       </section>
       
